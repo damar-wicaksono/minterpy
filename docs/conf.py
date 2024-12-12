@@ -139,12 +139,24 @@ html_show_sourcelink = False
 # Theme options
 html_theme_options = {
     "icon_links": [
-            {
-                "name": "GitHub",
-                "url": "https://github.com/casus/minterpy",
-                "icon": "fa-brands fa-square-github",
-                "type": "fontawesome",
-            },
+        {
+            "name": "GitHub",
+            "url": "https://damar-wicaksono.github.io/minterpy",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+        },
+        {
+            "name": "Latest Docs",
+            "url": "https://damar-wicaksono.github.io/minterpy/latest/",
+            "icon": "fa-brands fa-dev",
+            "type": "fontawesome",
+        },
+        {
+            "name": "Stable Docs",
+            "url": "https://damar-wicaksono.github.io/minterpy/stable/",
+            "icon": "fa-solid fa-box-open",
+            "type": "fontawesome",
+        },
     ],
 }
 
