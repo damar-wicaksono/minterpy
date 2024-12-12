@@ -3,7 +3,7 @@ name: Documentation Preview
 on: 
   pull_request:
     branches: ["dev"]
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, closed]
 
 permissions:
   contents: write
@@ -11,6 +11,7 @@ permissions:
 jobs:
   docs_preview:
     runs-on: ubuntu-latest
+    if: github.event.action == 'opened' || github.event.action == 'synchronize' 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
