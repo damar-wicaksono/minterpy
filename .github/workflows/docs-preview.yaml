@@ -35,6 +35,17 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           destination_dir: pr-preview/${{ github.event.number }}
+      - name: Post Comment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: "### Check out the [preview](https://damar-wicaksono.github.io/minterpy/${{ github.event.number }})"
+            })
+
   docs_preview_cleanup:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
