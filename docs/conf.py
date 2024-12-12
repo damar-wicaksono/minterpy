@@ -148,6 +148,12 @@ html_theme_options = {
     ],
 }
 
+suppress_warnings = [
+    'autosummary.import_cycle',
+]
+
+nb_execution_mode = "off"
+
 # --- Custom directives -------------------------------------------------------
 
 class ClassAutosummary(Autosummary):
