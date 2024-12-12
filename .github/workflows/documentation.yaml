@@ -37,4 +37,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           destination_dir: ./latest
-          force_orphan: true  
+          force_orphan: true
+      - uses: actions/checkout@v4
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
+        with:
+          ref: gh-pages
+      - name: Redirect main URL to the latest
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
+        run: |
+          rm -rf index.html &&
+          echo "<html>\n\t<head>\n\t\t<meta http-equiv=\"refresh\" content=\"0; url=latest/\" />\n\t</head>\n</html>" > index.html &&
+          git add index.html &&
+          git commit -m "Redirect the main URL to the latest documentation"
+      - name: Push changes
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
