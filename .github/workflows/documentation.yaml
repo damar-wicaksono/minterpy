@@ -28,4 +28,4 @@ jobs:
           pip install -e .[docs]
       - name: Build the docs
         run: |
-          cd minterpy/docs && make html
+          cd docs && make html
