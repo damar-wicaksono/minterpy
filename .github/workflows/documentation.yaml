@@ -42,10 +42,13 @@ jobs:
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         with:
           ref: gh-pages
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Redirect main URL to the latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         run: |
-          rm -rf index.html &&
           echo "<html>\n\t<head>\n\t\t<meta http-equiv=\"refresh\" content=\"0; url=latest/\" />\n\t</head>\n</html>" > index.html &&
           git add index.html &&
           git commit -m "Redirect the main URL to the latest documentation"
