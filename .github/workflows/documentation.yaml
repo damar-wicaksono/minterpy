@@ -42,15 +42,18 @@ jobs:
         with:
           ref: gh-pages
       - name: Configure Git
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Redirect main URL to the latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         run: |
-          echo "<html>\n\t<head>\n\t\t<meta http-equiv=\"refresh\" content=\"0; url=latest/\" />\n\t</head>\n</html>" > index.html &&
-          git add index.html &&
-          git commit -m "Redirect the main URL to the latest documentation"
+          if [ ! -e "index.html" ]; then
+            echo "<html>\n\t<head>\n\t\t<meta http-equiv=\"refresh\" content=\"0; url=latest/\" />\n\t</head>\n</html>" > index.html
+            git add index.html
+            git commit -m "Redirect the main URL to the latest documentation"
+          fi
       - name: Push changes
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         uses: ad-m/github-push-action@master
@@ -77,10 +80,11 @@ jobs:
       - name: Redirect main URL to the latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         run: |
-          rm -rf stable
-          ln -s main stable
-          git add stable
-          git commit -m "Redirect the main docs to the stable documentation"
+          if [ ! -e "stable" ]; then
+            ln -s main stable
+            git add stable
+            git commit -m "Redirect the main docs to the stable documentation"
+          fi          
       - name: Push changes
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: ad-m/github-push-action@master
