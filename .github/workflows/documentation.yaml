@@ -37,8 +37,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           destination_dir: ./latest
-          keep_files: true
-          force_orphan: true
       - uses: actions/checkout@v4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         with:
@@ -67,8 +65,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/
           destination_dir: ./main
-          keep_files: true
-          force_orphan: true
       - uses: actions/checkout@v4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
