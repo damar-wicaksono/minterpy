@@ -1,8 +1,6 @@
-name: documentation
+name: Documentation Build and Deployment
 
 on: 
-  pull_request:
-    branches: ["dev", "main"]
   push:
     branches: ["dev", "main"]
 
@@ -13,18 +11,15 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Run shared steps
+        uses: ./.github/actions/shared-steps
+        with:
+          message: 'Executing Getting Started'
       - name: Install Pandoc
         run: |
           sudo apt-get install -y pandoc
-      - name: Create a virtual environment
-        run: |
-          python -m venv venv &&
-          source venv/bin/activate
-      - name: Install docs dependencies
-        run: |
-          pip install -e .[docs]
       - name: Build the docs
         run: |
           sphinx-build docs _build

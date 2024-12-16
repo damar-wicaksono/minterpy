@@ -6,7 +6,7 @@ on:
     branches: ["dev", "main"]
 
 jobs:
-  nbtest_getting_started:
+  getting_started:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -23,7 +23,7 @@ jobs:
         with:
           name: report-notebooks-getting-started.xml
           path: ./report-notebooks-getting-started.xml
-  nbtest_getting_how_to:
+  getting_how_to:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
