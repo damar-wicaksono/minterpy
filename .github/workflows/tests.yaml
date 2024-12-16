@@ -47,11 +47,9 @@ jobs:
       - name: Install docs dependencies
         run: |
           pip install -e .[dev]
-      - name: Disable NUMBA
+      - name: Run Pytest (without Numba)
         run: |
           export NUMBA_DISABLE_JIT=1
-      - name: Run Pytest
-        run: |
           pytest --junitxml=report-pytest-nonumba.xml -vvv
       - name: Upload the report
         uses: actions/upload-artifact@v4
@@ -74,12 +72,10 @@ jobs:
           source venv/bin/activate
       - name: Install docs dependencies
         run: |
-          pip install -e .[dev]
-      - name: Disable NUMBA for coverage tests
+          pip install -e .[dev]          
+      - name: Run Pytest (without Numba)
         run: |
           export NUMBA_DISABLE_JIT=1
-      - name: Run Pytest
-        run: |
           pytest --junitxml=report-coverage.xml -vvv
       - name: Create coverage badge
         uses: tj-actions/coverage-badge-py@v2
@@ -105,3 +101,18 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           branch: ${{ github.ref }}
+      - name: Checkout dev branch to synchronize
+        if: ${{ github.ref == 'refs/heads/main' }} && steps.verify-changed-files.outputs.files_changed == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+      - name: Synchronize badge from main to dev
+        if: ${{ github.ref == 'refs/heads/main' }} && steps.verify-changed-files.outputs.files_changed == 'true'
+        run: |
+          git merge origin/main --no-edit
+      - name: Push changes
+        if: ${{ github.ref == 'refs/heads/main' }} && steps.verify-changed-files.outputs.files_changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.github_token }}
+          branch: dev
