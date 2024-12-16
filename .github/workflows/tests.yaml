@@ -84,12 +84,12 @@ jobs:
       - name: Create coverage badge
         uses: tj-actions/coverage-badge-py@v2
         with:
-          output: 'coverage-${{ github.ref }}.svg'
+          output: 'coverage-$(basename ${{ github.ref }}).svg'
       - name: Verify changed files
         uses: tj-actions/verify-changed-files@v16
         id: verify-changed-files
         with:
-          files: coverage-${{ github.ref }}.svg
+          files: coverage-$(basename ${{ github.ref }}).svg
       - name: Configure Git
         run: |
           git config --global user.name "github-actions[bot]"
@@ -98,7 +98,7 @@ jobs:
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
           git add coverage.svg
-          git commit -m "Updated coverage-${{ github.ref }}.svg"
+          git commit -m "Updated coverage-$(basename ${{ github.ref }}).svg"
       - name: Push changes
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         uses: ad-m/github-push-action@master
