@@ -1,5 +1,4 @@
 name: Documentation Build and Deployment
-description: Build and deploy the documentation on pushes to 'main' and 'dev' branches
 
 on: 
   push:
@@ -86,3 +85,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
+      - name: Check out repo
+        uses: actions/checkout@v4
