@@ -1,10 +1,5 @@
 name: Shared Steps for Docs
 description: Common steps for installing requirements for docs
-inputs:
-  message:
-    description: 'A message to log'
-    required: false
-    default: 'Default message'
 runs:
   using: "composite"
   steps:

@@ -1,5 +1,4 @@
 name: Test Notebook-based Documentation
-description: Execute the notebook-based documentation for testing
 
 on: 
   push:
