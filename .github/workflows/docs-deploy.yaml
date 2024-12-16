@@ -1,5 +1,4 @@
-name: Documentation Build and Deployment
-
+name: docs
 on: 
   push:
     branches: ["dev", "main"]
