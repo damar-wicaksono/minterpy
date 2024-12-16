@@ -97,7 +97,7 @@ jobs:
       - name: Commit files
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
-          git add coverage.svg
+          git add coverage-${{ github.ref_name }}.svg
           git commit -m "Updated coverage-${{ github.ref_name }}.svg"
       - name: Push changes
         if: steps.verify-changed-files.outputs.files_changed == 'true'
