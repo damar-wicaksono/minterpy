@@ -4,11 +4,9 @@ on:
   push:
   pull_request:
     branches: ["dev", "main"]
-    types: [opened, synchronize, closed]
 
 jobs:
   nbtest:
     runs-on: ubuntu-latest
-    if: github.event.action == 'opened' || github.event.action == 'synchronize' 
     steps:
       - uses: actions/checkout@v4
