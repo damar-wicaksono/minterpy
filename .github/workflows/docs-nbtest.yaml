@@ -9,6 +9,8 @@ jobs:
   nbtest_getting_started:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
       - name: Run shared steps
         uses: ./.github/actions/shared-steps
         with:
@@ -24,6 +26,8 @@ jobs:
   nbtest_getting_how_to:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
       - name: Run shared steps
         uses: ./.github/actions/shared-steps
         with:
