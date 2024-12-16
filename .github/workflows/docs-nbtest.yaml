@@ -6,27 +6,33 @@ on:
     branches: ["dev", "main"]
 
 jobs:
-  nbtest:
+  nbtest_getting_started:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
-        uses: actions/checkout@v4
-      - name: Install Python
-        uses: actions/setup-python@v5
+      - name: Run shared steps
+        uses: ./.github/actions/shared-steps
         with:
-          python-version: "3.10"
-      - name: Create a virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-      - name: Install docs dependencies
-        run: |
-          pip install -e .[docs]
+          message: 'Executing Getting Started'
       - name: Execute the notebooks
         run: |
-          pytest --junitxml=report-notebooks.xml -vvv --nbmake "./docs/getting-started" "./docs/how-to"
+          pytest --junitxml=report-notebooks-getting-started.xml -vvv --nbmake "./docs/getting-started"
       - name: Upload the report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: report-notebooks.xml
-          path: ./
+          name: report-notebooks-getting-started.xml
+          path: ./report-notebooks-getting-started.xml
+  nbtest_getting_how_to:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run shared steps
+        uses: ./.github/actions/shared-steps
+        with:
+          message: 'Executing How-To'
+      - name: Execute the notebooks
+        run: |
+          pytest --junitxml=report-notebooks-getting-how-to.xml -vvv --nbmake "./docs/how-to"
+      - name: Upload the report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-notebooks-how-to.xml
+          path: ./report-notebooks-how-to.xml
