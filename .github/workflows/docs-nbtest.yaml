@@ -7,6 +7,7 @@ on:
 
 jobs:
   getting_started:
+    if: github.event_name != 'push' || github.event.pull_request == null
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -24,6 +25,7 @@ jobs:
           name: report-notebooks-getting-started.xml
           path: ./report-notebooks-getting-started.xml
   how_to:
+    if: github.event_name != 'push' || github.event.pull_request == null
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
