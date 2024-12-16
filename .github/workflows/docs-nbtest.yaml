@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
