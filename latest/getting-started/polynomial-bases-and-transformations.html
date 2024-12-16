@@ -59,7 +59,7 @@
     <link rel="prev" title="Basic Calculus Operations with Polynomials" href="calculus-operations-with-polynomials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -800,6 +800,11 @@ Q(x) = 10 + 4.5 x - 3 x^2 + 1.5 x^3 - 1.2 x^4, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.canonical_polynomial.CanonicalPolynomial at 0x7fe05106e620&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>The plot of the polynomial is shown below.</p>
 <div class="cell tag_hide-input docutils container">
@@ -818,6 +823,9 @@ Q(x) = 10 + 4.5 x - 3 x^2 + 1.5 x^3 - 1.2 x^4, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/49973dfabb3d8a00a3d10457481276963f8c0c14421a9f5cfc9d806efc564860.png" src="../_images/49973dfabb3d8a00a3d10457481276963f8c0c14421a9f5cfc9d806efc564860.png" />
+</div>
 </div>
 <p>The same polynomial can be expressed in a different basis using the help of a transformation class.
 Note that all instance of the transformation class must be called to carry out the actual transformation that returns a polynomial in the new basis.</p>
@@ -878,6 +886,9 @@ Note that all instance of the transformation class must be called to carry out t
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/f952b9b83fb6f36c5acce03da8d162205950d75524b729157523e9e06a8f7f15.png" src="../_images/f952b9b83fb6f36c5acce03da8d162205950d75524b729157523e9e06a8f7f15.png" />
+</div>
 </div>
 <section id="in-the-1d-lagrange-basis">
 <h3>In the (1D) Lagrange basis<a class="headerlink" href="#in-the-1d-lagrange-basis" title="Link to this heading">#</a></h3>
@@ -896,11 +907,21 @@ Note that all instance of the transformation class must be called to carry out t
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.5 , 6.5 , 5.  , 4.25, 4.25])
+</pre></div>
+</div>
+</div>
 </div>
 <p>These coefficients are the function values at the unisolvent nodes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">can_poly_1d</span><span class="p">(</span><span class="n">can_poly_1d</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.5 , 6.5 , 5.  , 4.25, 4.25])
 </pre></div>
 </div>
 </div>
@@ -965,6 +986,9 @@ Note that all instance of the transformation class must be called to carry out t
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/e78ef04784774c14d5f2e16b165c0676a296542cd654590d0976b33c3dd8a10b.png" src="../_images/e78ef04784774c14d5f2e16b165c0676a296542cd654590d0976b33c3dd8a10b.png" />
+</div>
 </div>
 </section>
 <section id="in-the-1d-newton-basis">
@@ -984,12 +1008,26 @@ Note that all instance of the transformation class must be called to carry out t
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.5       , -2.5       , -1.        , -4.29289322,  1.        ])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Although the canonical polynomial can be defined without the need for an interpolation grid, the transformation to a Newton basis requires such a grid. If not specified during construction, Minterpy automatically creates an interpolating grid based on the Leja-ordered Chebyshev-Lobatto points.
 This means the generating points of the grid are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nwt_poly_1d</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">generating_points</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.00000000e+00],
+       [-1.00000000e+00],
+       [-6.12323400e-17],
+       [ 7.07106781e-01],
+       [-7.07106781e-01]])
 </pre></div>
 </div>
 </div>
@@ -1054,6 +1092,9 @@ Q(x) = 1.5 - 2.5 (x - 1) - 1 (x - 1) (x + 1) - 4.29289322 (x - 1) (x + 1) x + (x
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/35077ecfbd7e3f064ba7f41ea867b00e6a91c7f6b2effab971384e6ec2cdc8b5.png" src="../_images/35077ecfbd7e3f064ba7f41ea867b00e6a91c7f6b2effab971384e6ec2cdc8b5.png" />
+</div>
 </div>
 </section>
 <section id="in-the-1d-chebyshev-basis">
@@ -1070,6 +1111,11 @@ Q(x) = 1.5 - 2.5 (x - 1) - 1 (x - 1) (x + 1) - 4.29289322 (x - 1) (x + 1) x + (x
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheb_poly_1d</span><span class="o">.</span><span class="n">coeffs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.375, -1.25 , -0.5  , -1.25 ,  0.125])
 </pre></div>
 </div>
 </div>
@@ -1133,6 +1179,9 @@ Q(x) = 4.375 - 1.25 T_1 (x) - 0.5 T_2 (x) - 1.25 T_3 (x) + 0.125 T_4(x).
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/f5f33ea35b86e0cfc62f762575661f7f2f43fef24d4678efa6e47700c9620c27.png" src="../_images/f5f33ea35b86e0cfc62f762575661f7f2f43fef24d4678efa6e47700c9620c27.png" />
+</div>
 </div>
 </section>
 </section>
@@ -1205,6 +1254,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/f3af08f6f032e3070bd732b6d951dea52a9f105bd77da69f70295e4e2d7e7de0.png" src="../_images/f3af08f6f032e3070bd732b6d951dea52a9f105bd77da69f70295e4e2d7e7de0.png" />
+</div>
 </div>
 <p>Because the function is not a polynomial (a square root is involved), creating a polynomial that approximates the function is much more intuitive in the Lagrange basis. In the other basis, it is not straightforward to intuit what the coefficient values should be.</p>
 <p>First, create a two-dimensional multi-index of specified degree:</p>
@@ -1212,6 +1264,23 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_2d</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">mi_2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[0, 0],
+         [1, 0],
+         [2, 0],
+         [3, 0],
+         [0, 1],
+         [1, 1],
+         [2, 1],
+         [0, 2],
+         [1, 2],
+         [0, 3]]),
+  lp_degree=1.0
+)
 </pre></div>
 </div>
 </div>
@@ -1292,6 +1361,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/a24f99c2a55d61686081d38287584be7632b141f8c77e1ccb840c6d1ad1bd6c7.png" src="../_images/a24f99c2a55d61686081d38287584be7632b141f8c77e1ccb840c6d1ad1bd6c7.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1338,6 +1410,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/75242ef3d415bc0b5dbae19cc80fe006cdab01c92fd38e1d0697cd423caa0ec7.png" src="../_images/75242ef3d415bc0b5dbae19cc80fe006cdab01c92fd38e1d0697cd423caa0ec7.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1384,6 +1459,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/123982a0683befbc2d9fdaa0bd176b4655f8a28baf32db4bd975af52aab2de88.png" src="../_images/123982a0683befbc2d9fdaa0bd176b4655f8a28baf32db4bd975af52aab2de88.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1430,6 +1508,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/a6e64e415d0b510f494e4e090c68d25b497a6ecbc296517ba0c9b0e2199ad7c9.png" src="../_images/a6e64e415d0b510f494e4e090c68d25b497a6ecbc296517ba0c9b0e2199ad7c9.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1476,6 +1557,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/4d90f33852c9b27130f0529d38ef8206b57a38bba4d1db9e36b60c7d13d9cd99.png" src="../_images/4d90f33852c9b27130f0529d38ef8206b57a38bba4d1db9e36b60c7d13d9cd99.png" />
+</div>
 </div>
 <section id="in-the-2d-newton-basis">
 <h3>In the (2D) Newton basis<a class="headerlink" href="#in-the-2d-newton-basis" title="Link to this heading">#</a></h3>
@@ -1491,6 +1575,13 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nwt_poly_2d</span><span class="o">.</span><span class="n">coeffs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.74341649e+00,  1.07861961e-01, -1.06947330e-01,  2.47397340e-03,
+        1.03165489e-01, -2.34823578e-03,  2.29202359e-03, -1.04530584e-01,
+        2.44535969e-03,  2.16730120e-03])
 </pre></div>
 </div>
 </div>
@@ -1551,6 +1642,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/e0f2f9b4cccdb355b64bfbd6d98030d071a2d507ee99a330d5cb784c7f672e56.png" src="../_images/e0f2f9b4cccdb355b64bfbd6d98030d071a2d507ee99a330d5cb784c7f672e56.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1597,6 +1691,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/95f4469b484e875508bb8c8d5f94df97d64b89560227e5fddc354a23c7c7d95d.png" src="../_images/95f4469b484e875508bb8c8d5f94df97d64b89560227e5fddc354a23c7c7d95d.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1643,6 +1740,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/1197745f80d112dcfb310354cbfab9f086a263117934d8cd20297063dae573ec.png" src="../_images/1197745f80d112dcfb310354cbfab9f086a263117934d8cd20297063dae573ec.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1689,6 +1789,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/3f34e42db787c58507e845a10457f6d10adc7d335aa0f46a5c50e914de300c9a.png" src="../_images/3f34e42db787c58507e845a10457f6d10adc7d335aa0f46a5c50e914de300c9a.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1735,6 +1838,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/b22a8382ff146664bc773250da46dbfb1666d1443cf9cee029762882dec1ac7d.png" src="../_images/b22a8382ff146664bc773250da46dbfb1666d1443cf9cee029762882dec1ac7d.png" />
+</div>
 </div>
 </section>
 <section id="in-the-2d-canonical-basis">
@@ -1751,6 +1857,13 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">can_poly_2d</span><span class="o">.</span><span class="n">coeffs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.95285284e+00,  1.00594392e-01, -1.05892293e-01,  2.47397340e-03,
+        1.01054400e-01, -2.34823578e-03,  2.29202359e-03, -1.05892293e-01,
+        2.44535969e-03,  2.16730120e-03])
 </pre></div>
 </div>
 </div>
@@ -1813,6 +1926,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/482f63a97ac61775103172a3075dccf1948e2444a1739f2f5eb7e9e126dbb5bf.png" src="../_images/482f63a97ac61775103172a3075dccf1948e2444a1739f2f5eb7e9e126dbb5bf.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1859,6 +1975,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/0bf01b6bfeeb7ed43ea1bdf1632642d2d90bc6399da6562ed0deee04cbc6caf2.png" src="../_images/0bf01b6bfeeb7ed43ea1bdf1632642d2d90bc6399da6562ed0deee04cbc6caf2.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1905,6 +2024,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/67fc8215eb3a09be70b6fcd9d5ea647f079ee0d083e1d816e0ba09c80c0b4c15.png" src="../_images/67fc8215eb3a09be70b6fcd9d5ea647f079ee0d083e1d816e0ba09c80c0b4c15.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1951,6 +2073,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/0113a906f9c3738ee2d68a5bcafd10df2a5509414175955e1a3fe4f4194ba652.png" src="../_images/0113a906f9c3738ee2d68a5bcafd10df2a5509414175955e1a3fe4f4194ba652.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -1997,6 +2122,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/a20683008e9bb2a3b7115cd578f048374ffcd036b26b0f236d3534f2991d638b.png" src="../_images/a20683008e9bb2a3b7115cd578f048374ffcd036b26b0f236d3534f2991d638b.png" />
+</div>
 </div>
 </section>
 <section id="in-the-2d-chebyshev-basis">
@@ -2013,6 +2141,13 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheb_poly_2d</span><span class="o">.</span><span class="n">coeffs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.84696055e+00,  1.03672552e-01, -5.29461463e-02,  6.18493351e-04,
+        1.03825888e-01, -2.34823578e-03,  1.14601180e-03, -5.29461463e-02,
+        1.22267985e-03,  5.41825299e-04])
 </pre></div>
 </div>
 </div>
@@ -2072,6 +2207,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/2fca9fd713d8bb9321c7a81a03042f97adcef0774b56102e6736c9e4b784bd4b.png" src="../_images/2fca9fd713d8bb9321c7a81a03042f97adcef0774b56102e6736c9e4b784bd4b.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -2118,6 +2256,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/805e64e2433a89b03dd3dff9c7f18856abaf2b9dc4d12fe5ad7328b5730e7e85.png" src="../_images/805e64e2433a89b03dd3dff9c7f18856abaf2b9dc4d12fe5ad7328b5730e7e85.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -2164,6 +2305,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/f77bb928742d5eede9c826321ed302a43ee9fe2db875191603dc0cc84b4f4f2b.png" src="../_images/f77bb928742d5eede9c826321ed302a43ee9fe2db875191603dc0cc84b4f4f2b.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -2210,6 +2354,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/2093dc3bfefb255f79255c9d59a7da8585cf6bfe04eeb1f10cc7fda2f50b4c7a.png" src="../_images/2093dc3bfefb255f79255c9d59a7da8585cf6bfe04eeb1f10cc7fda2f50b4c7a.png" />
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -2256,6 +2403,9 @@ f(x_1, x_2) = \left( 25 - (x_1 - 0.5)^2 - (x_2 - 0.5)^2 \right)^{0.5}, x_1, x_2 
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/eb65e65df76ec4992852aed52630733f62e35bacebbb2689133a2fe5c2261079.png" src="../_images/eb65e65df76ec4992852aed52630733f62e35bacebbb2689133a2fe5c2261079.png" />
+</div>
 </div>
 </section>
 </section>

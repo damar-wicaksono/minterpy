@@ -59,7 +59,7 @@
     <link rel="prev" title="Create the Union of MultiIndexSet Instances" href="multi-index-set-union.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -530,6 +530,24 @@ B &amp; = \left\{ (0, 0), (0, 1), (0, 2), (0, 3) \right\}\\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=5, p=1.0)
+[[0 0]
+ [1 0]
+ [2 0]
+ [0 1]
+ [1 1]
+ [2 1]
+ [0 2]
+ [1 2]
+ [2 2]
+ [0 3]
+ [1 3]
+ [2 3]
+ [0 4]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>The dimension of the product set remains the same as that of the operands (in this case, <span class="math notranslate nohighlight">\(2\)</span>). Also notice that the product set is lexicographically sorted. Furthermore, because the operands are downward-closed, the resulting product remains downward-closed. That is:</p>
 <div class="cell docutils container">
@@ -538,11 +556,21 @@ B &amp; = \left\{ (0, 0), (0, 1), (0, 2), (0, 3) \right\}\\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>The polynomial degree of the product set is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi_prod_1</span><span class="o">.</span><span class="n">poly_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -557,11 +585,21 @@ B &amp; = \left\{ (0, 0), (0, 1), (0, 2), (0, 3) \right\}\\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Alternatively, the union may also be created using a method call whose result is equivalent:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_prod_1</span> <span class="o">==</span> <span class="n">mi_a</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">mi_b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -589,11 +627,31 @@ C = \left\{ (1, 0), (0, 3) \right\}\\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[1, 0],
+         [2, 0],
+         [3, 0],
+         [1, 1],
+         [0, 3],
+         [1, 3],
+         [2, 3],
+         [0, 4]]),
+  lp_degree=1.0
+)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Because one of the operands is not downward-closed, the product set is also not downward-closed. That is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">mi_a</span> <span class="o">*</span> <span class="n">mi_c</span><span class="p">)</span><span class="o">.</span><span class="n">is_downward_closed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -630,12 +688,27 @@ E &amp; = \left\{ (0, 0, 0), (1, 0, 0), (0, 0, 1) \right\} &amp; \text{dimension
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=2, p=1.0)
+[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [0 0 1]
+ [1 0 1]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that the product set has the same dimension as the largest dimension of the operands (in this case, <span class="math notranslate nohighlight">\(3\)</span>).</p>
 <p>The polynomial degree of the product set is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi_prod_2</span><span class="o">.</span><span class="n">poly_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -671,6 +744,18 @@ G &amp; = \left\{ (0, 0), (1, 0), (0, 1) \right\} &amp; \text{w.r.t } &amp; p = 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=2, p=inf)
+[[0 0]
+ [1 0]
+ [2 0]
+ [0 1]
+ [1 1]
+ [2 1]
+ [1 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>By convention, the <span class="math notranslate nohighlight">\(l_p\)</span>-degree of the product set is the maximum of the <span class="math notranslate nohighlight">\(l_p\)</span>-degrees of the operands (in this case, <span class="math notranslate nohighlight">\(\infty\)</span>):</p>
 <div class="cell docutils container">
@@ -679,11 +764,21 @@ G &amp; = \left\{ (0, 0), (1, 0), (0, 1) \right\} &amp; \text{w.r.t } &amp; p = 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inf
+</pre></div>
+</div>
+</div>
 </div>
 <p>The polynomial degree of the product set is computed based on the resulting index set and <span class="math notranslate nohighlight">\(l_p\)</span>-degree:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi_prod_3</span><span class="o">.</span><span class="n">poly_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -707,6 +802,11 @@ G &amp; = \left\{ (0, 0), (1, 0), (0, 1) \right\} &amp; \text{w.r.t } &amp; p = 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>Alternatively, to create the product via an inplace operator:</p>
 <div class="cell docutils container">
@@ -720,6 +820,11 @@ G &amp; = \left\{ (0, 0), (1, 0), (0, 1) \right\} &amp; \text{w.r.t } &amp; p = 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_d</span> <span class="o">==</span> <span class="n">mi_prod_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>

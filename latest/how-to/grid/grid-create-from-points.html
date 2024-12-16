@@ -59,7 +59,7 @@
     <link rel="prev" title="Create a Grid with a Generating Function" href="grid-create-from-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -484,7 +484,7 @@
 <h1>Create a Grid from an Array of Generating Points<a class="headerlink" href="#create-a-grid-from-an-array-of-generating-points" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -546,7 +546,7 @@ and the Leja points in the second dimension.</p>
 <p>Create an instance of <code class="docutils literal notranslate"><span class="pre">MultiIndexSet</span></code> following the above specification:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">exponents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exponents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -563,14 +563,28 @@ and the Leja points in the second dimension.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">lp_degree</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">lp_degree</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=4, p=1.0)
+[[0 0]
+ [1 0]
+ [2 0]
+ [0 1]
+ [1 1]
+ [0 2]
+ [1 2]
+ [0 3]
+ [1 3]]
 </pre></div>
 </div>
 </div>
@@ -581,7 +595,7 @@ and the Leja points in the second dimension.</p>
 <p>The generating points as required by the grid are given as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">gen_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gen_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span> <span class="p">],</span>
     <span class="p">[</span> <span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span> <span class="p">],</span>
     <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
@@ -604,7 +618,7 @@ The generating points, however, must have unique values per column.</p>
 can  be constructed via <code class="docutils literal notranslate"><span class="pre">from_points()</span></code> method as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_points</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">gen_points</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_points</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">gen_points</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -612,7 +626,20 @@ can  be constructed via <code class="docutils literal notranslate"><span class="
 <p>The grid has the following unisolvent nodes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.          0.        ]
+ [ 1.          0.        ]
+ [-0.5         0.        ]
+ [-1.         -1.        ]
+ [ 1.         -1.        ]
+ [-1.          1.        ]
+ [ 1.          1.        ]
+ [-1.          0.57735035]
+ [ 1.          0.57735035]]
 </pre></div>
 </div>
 </div>
@@ -620,11 +647,14 @@ can  be constructed via <code class="docutils literal notranslate"><span class="
 <p>The two-dimensional interpolation grid is plotted below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8546396ca712e31a762e4d391498a4558fc1740411810dd702336b51c8ce1e3e.png" src="../../_images/8546396ca712e31a762e4d391498a4558fc1740411810dd702336b51c8ce1e3e.png" />
 </div>
 </div>
 </section>

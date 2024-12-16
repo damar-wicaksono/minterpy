@@ -59,7 +59,7 @@
     <link rel="prev" title="Polynomial Bases and Transformations" href="polynomial-bases-and-transformations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -574,6 +574,9 @@ f_2(x) &amp; = \frac{2 x}{\sqrt{\pi}} f_1(x),
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/678314ded14336d0f2f7a0147949cc7682cd07b131a5d481e116023f59683c69.png" src="../_images/678314ded14336d0f2f7a0147949cc7682cd07b131a5d481e116023f59683c69.png" />
+</div>
 </div>
 </section>
 <section id="polynomial-regression">
@@ -604,6 +607,11 @@ f_2(x) &amp; = \frac{2 x}{\sqrt{\pi}} f_1(x),
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="create-an-ordinary-regression-polynomial">
@@ -630,6 +638,11 @@ In other words, ordinary least squares will subsequently be used to estimate the
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>The polynomial coefficients are obtained by solving the following least-squares problem (ordinary least-squares):</p>
 <div class="math notranslate nohighlight">
@@ -645,11 +658,23 @@ The method requires a pair of inputs and the corresponding output are required. 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/minterpy/minterpy/src/minterpy/schemes/barycentric/operators.py:50: UserWarning: building a full transformation matrix from a barycentric transformation. this is inefficient.
+  warn(
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that the call to <code class="docutils literal notranslate"><span class="pre">fit()</span></code> alters the instance in-place; once the call is concluded, the coefficients are available:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_poly</span><span class="o">.</span><span class="n">coeffs</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># the first 10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.11473161,  0.41097058,  0.24196861, -0.05085656,  0.42838383,
+        0.37984464,  0.06996035, -0.10282655,  0.42058672,  0.41146145])
 </pre></div>
 </div>
 </div>
@@ -671,6 +696,11 @@ The method requires a pair of inputs and the corresponding output are required. 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.11748932,  0.3520634 ,  0.35206581])
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="verify-the-fitted-polynomial">
@@ -679,6 +709,20 @@ The method requires a pair of inputs and the corresponding output are required. 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_poly</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ordinary Polynomial Regression
+------------------------------
+Spatial dimension: 2
+Poly. degree     : 8
+Lp-degree        : 2.0
+Origin poly.     : &lt;class &#39;minterpy.polynomials.lagrange_polynomial.LagrangePolynomial&#39;&gt;
+Error                     Absolute     Relative
+L-inf Regression Fit   2.57395e-06  1.77514e-05
+L2 Regression Fit      8.05418e-13  3.83077e-11
+LOO CV                 2.59071e-10  1.23220e-08
 </pre></div>
 </div>
 </div>
@@ -698,6 +742,11 @@ That being said, the LOO-CV error is usually a more robust estimate of the gener
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx_test</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">yy_test</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="n">xx_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">yy_test</span> <span class="o">-</span> <span class="n">reg_poly</span><span class="p">(</span><span class="n">xx_test</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2993877590648122e-08
 </pre></div>
 </div>
 </div>
@@ -781,6 +830,9 @@ That being said, the LOO-CV error is usually a more robust estimate of the gener
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/5e3dc35e55e97eb180ae931942e077db75103c4455e0bb563dbe6e3a31b2c82c.png" src="../_images/5e3dc35e55e97eb180ae931942e077db75103c4455e0bb563dbe6e3a31b2c82c.png" />
+</div>
 </div>
 <p>The plots show that the regression polynomial captures the overall behavior of the original function well. This indicates that the chosen polynomial structure and the available data are sufficient. Furthermore, the error plot shows that the differences between the regression polynomial and the original function are small across the function domain.</p>
 </section>
@@ -790,6 +842,11 @@ That being said, the LOO-CV error is usually a more robust estimate of the gener
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_poly</span><span class="o">.</span><span class="n">eval_poly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f8f3beec040&gt;
 </pre></div>
 </div>
 </div>

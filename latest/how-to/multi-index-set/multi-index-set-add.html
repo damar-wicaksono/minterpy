@@ -59,7 +59,7 @@
     <link rel="prev" title="Create a Multi-Index Set" href="multi-index-set-create.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -507,6 +507,26 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=4, n=2, p=1.0)
+[[0 0 0 0]
+ [1 0 0 0]
+ [2 0 0 0]
+ [0 1 0 0]
+ [1 1 0 0]
+ [0 2 0 0]
+ [0 0 1 0]
+ [1 0 1 0]
+ [0 1 1 0]
+ [0 0 2 0]
+ [0 0 0 1]
+ [1 0 0 1]
+ [0 1 0 1]
+ [0 0 1 1]
+ [0 0 0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="add-an-exponent-to-a-multiindexset-instance">
@@ -520,12 +540,40 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 3, 0]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that the array is of shape <span class="math notranslate nohighlight">\(1 \times 4\)</span> because the dimension of the multi-index set is <span class="math notranslate nohighlight">\(4\)</span> and one new element is to be added.
 To add the exponent to the <code class="docutils literal notranslate"><span class="pre">MultiIndexSet</span></code> instance:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span><span class="n">new_exp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[0, 0, 0, 0],
+         [1, 0, 0, 0],
+         [2, 0, 0, 0],
+         [0, 1, 0, 0],
+         [1, 1, 0, 0],
+         [0, 2, 0, 0],
+         [0, 0, 1, 0],
+         [1, 0, 1, 0],
+         [0, 1, 1, 0],
+         [0, 0, 2, 0],
+         [0, 0, 3, 0],
+         [0, 0, 0, 1],
+         [1, 0, 0, 1],
+         [0, 1, 0, 1],
+         [0, 0, 1, 1],
+         [0, 0, 0, 2]]),
+  lp_degree=1.0
+)
 </pre></div>
 </div>
 </div>
@@ -545,11 +593,37 @@ To add the exponent to the <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=4, n=3, p=1.0)
+[[0 0 0 0]
+ [1 0 0 0]
+ [2 0 0 0]
+ [0 1 0 0]
+ [1 1 0 0]
+ [0 2 0 0]
+ [0 0 1 0]
+ [1 0 1 0]
+ [0 1 1 0]
+ [0 0 2 0]
+ [0 0 3 0]
+ [0 0 0 1]
+ [1 0 0 1]
+ [0 1 0 1]
+ [0 0 1 1]
+ [0 0 0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Notice that the new instance has a higher polynomial degree than the original degree:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_ext</span><span class="o">.</span><span class="n">poly_degree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -577,6 +651,31 @@ B = \left\{ (3, 0, 0, 0), (0, 3, 0, 0), (0, 0, 0, 3) \right\}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span><span class="n">exps</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[0, 0, 0, 0],
+         [1, 0, 0, 0],
+         [2, 0, 0, 0],
+         [3, 0, 0, 0],
+         [0, 1, 0, 0],
+         [1, 1, 0, 0],
+         [0, 2, 0, 0],
+         [0, 3, 0, 0],
+         [0, 0, 1, 0],
+         [1, 0, 1, 0],
+         [0, 1, 1, 0],
+         [0, 0, 2, 0],
+         [0, 0, 0, 1],
+         [1, 0, 0, 1],
+         [0, 1, 0, 1],
+         [0, 0, 1, 1],
+         [0, 0, 0, 2],
+         [0, 0, 0, 3]]),
+  lp_degree=1.0
+)
 </pre></div>
 </div>
 </div>

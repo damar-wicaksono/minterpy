@@ -59,7 +59,7 @@
     <link rel="prev" title="Compare MultiIndexSet Instances" href="multi-index-set-comparison.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -513,11 +513,22 @@ A = \{ (0, 0, 2) \}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=2, p=2.0)
+[[0 0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>This set has a polynomial degree of:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">poly_degree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -536,6 +547,11 @@ A = \{ (0, 0, 2) \}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>The check indicates that the given multi-index set is not complete with respect to the given polynomial degree and <span class="math notranslate nohighlight">\(l_p\)</span>-degree.</p>
 </section>
@@ -545,6 +561,24 @@ A = \{ (0, 0, 2) \}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">make_complete</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[0, 0, 0],
+         [1, 0, 0],
+         [2, 0, 0],
+         [0, 1, 0],
+         [1, 1, 0],
+         [0, 2, 0],
+         [0, 0, 1],
+         [1, 0, 1],
+         [0, 1, 1],
+         [1, 1, 1],
+         [0, 0, 2]]),
+  lp_degree=2.0
+)
 </pre></div>
 </div>
 </div>
@@ -564,6 +598,11 @@ A = \{ (0, 0, 2) \}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="completeness-with-respect-to-different-polynomial-degrees-and-l-p-degrees">
@@ -573,6 +612,21 @@ For instance, the complete three-dimensional multi-index set for a polynomial de
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=2, p=1.0)
+[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [0 1 0]
+ [1 1 0]
+ [0 2 0]
+ [0 0 1]
+ [1 0 1]
+ [0 1 1]
+ [0 0 2]]
 </pre></div>
 </div>
 </div>
@@ -588,12 +642,62 @@ For instance, the complete three-dimensional multi-index set for a polynomial de
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=2, p=2.0)
+[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [0 1 0]
+ [1 1 0]
+ [0 2 0]
+ [0 0 1]
+ [1 0 1]
+ [0 1 1]
+ [1 1 1]
+ [0 0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>In particular, the element <span class="math notranslate nohighlight">\((1, 1, 1)\)</span> is missing from the complete set with respect to <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(1.0\)</span> because the element <em>does not</em> satisfy the condition <span class="math notranslate nohighlight">\(\left( 1^1 + 1^1 + 1^1 \right)^1 \leq 2\)</span> (i.e., for <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(1.0\)</span>). However, the element does satisfy the condition <span class="math notranslate nohighlight">\(\left( 1^2 + 1^2 + 1^2 \right)^{0.5} \leq 2\)</span> (i.e., for <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(2.0\)</span>).</p>
 <p>Similarly, if the polynomial degree differs, the corresponding complete set for the same <span class="math notranslate nohighlight">\(l_p\)</span>-degree (and spatial dimensions) is in general different. For instance, the complete three-dimensional multi-index set for a polynomial degree <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(2.0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=3, p=2.0)
+[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [3 0 0]
+ [0 1 0]
+ [1 1 0]
+ [2 1 0]
+ [0 2 0]
+ [1 2 0]
+ [2 2 0]
+ [0 3 0]
+ [0 0 1]
+ [1 0 1]
+ [2 0 1]
+ [0 1 1]
+ [1 1 1]
+ [2 1 1]
+ [0 2 1]
+ [1 2 1]
+ [2 2 1]
+ [0 0 2]
+ [1 0 2]
+ [2 0 2]
+ [0 1 2]
+ [1 1 2]
+ [2 1 2]
+ [0 2 2]
+ [1 2 2]
+ [0 0 3]]
 </pre></div>
 </div>
 </div>

@@ -59,7 +59,7 @@
     <link rel="prev" title="Quick Start Guide to Function Approximations with Minterpy" href="functions-approximation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -508,6 +508,9 @@ f(x) = \frac{1}{1 + 25 x^2}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/478e7f6005e0e9586e630e6f9bef26de9029aa0d8fff90e09bacf085eb24f4d5.png" src="../_images/478e7f6005e0e9586e630e6f9bef26de9029aa0d8fff90e09bacf085eb24f4d5.png" />
+</div>
 </div>
 <p>With the function of interest defined, you are now ready to create a polynomial that approximates it.</p>
 </section>
@@ -546,6 +549,24 @@ You can create a complete multi-index set using the class method <a class="refer
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[ 0],
+         [ 1],
+         [ 2],
+         [ 3],
+         [ 4],
+         [ 5],
+         [ 6],
+         [ 7],
+         [ 8],
+         [ 9],
+         [10]]),
+  lp_degree=2.0
+)
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="construct-an-interpolation-grid">
@@ -573,6 +594,21 @@ For the chosen polynomial degree, these nodes are:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.00000000e+00],
+       [-1.00000000e+00],
+       [-6.12323400e-17],
+       [ 5.87785252e-01],
+       [-5.87785252e-01],
+       [ 8.09016994e-01],
+       [-8.09016994e-01],
+       [ 3.09016994e-01],
+       [-3.09016994e-01],
+       [ 9.51056516e-01],
+       [-9.51056516e-01]])
+</pre></div>
+</div>
+</div>
 </div>
 <p>which distributed like the following:</p>
 <div class="cell tag_hide-input docutils container">
@@ -594,6 +630,9 @@ For the chosen polynomial degree, these nodes are:</p>
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/e3e96bcda98441dac4d453d5bbb9ffef67fd8e4e81024b86034d8084feebd0f9.png" src="../_images/e3e96bcda98441dac4d453d5bbb9ffef67fd8e4e81024b86034d8084feebd0f9.png" />
+</div>
 </div>
 <p>Notice that there are more points in the boundaries of the domain.</p>
 </section>
@@ -611,6 +650,21 @@ Q(p_{\alpha}) = f(p_{\alpha}), \forall p_{\alpha} \in P_A,
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coeffs</span> <span class="o">=</span> <span class="n">grd</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
 <span class="n">coeffs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.03846154],
+       [0.03846154],
+       [1.        ],
+       [0.10376364],
+       [0.10376364],
+       [0.05759469],
+       [0.05759469],
+       [0.29522147],
+       [0.29522147],
+       [0.04235007],
+       [0.04235007]])
 </pre></div>
 </div>
 </div>
@@ -665,6 +719,12 @@ Q(x) = \sum_{\alpha \in A} c_{\mathrm{nwt}, \alpha} \, \Psi_{\mathrm{nwt}, \alph
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/minterpy/minterpy/src/minterpy/schemes/barycentric/transformation_fcts.py:109: NumbaPerformanceWarning: <span class=" -Color -Color-Bold">&#39;@&#39; is faster on contiguous arrays, called on (Array(float64, 2, &#39;A&#39;, False, aligned=True), Array(float64, 1, &#39;C&#39;, False, aligned=True))</span>
+  coeff_slice_transformed = matrix_piece @ slice_in
+</pre></div>
+</div>
+</div>
 </div>
 <p>In the above statement, the first part of the call, <code class="docutils literal notranslate"><span class="pre">mp.LagrangeToNewton(lag_poly)</span></code>, creates a transformation instance that converts the given polynomial from the Lagrange basis to the Newton basis.</p>
 <p>The second call, which is made without any arguments, performs the transformation and returns the actual Newton polynomial instance.</p>
@@ -700,11 +760,21 @@ Q(x) = \sum_{\alpha \in A} c_{\mathrm{nwt}, \alpha} \, \Psi_{\mathrm{nwt}, \alph
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.03846154, 0.04058527, 0.04244967, 0.0440694 , 0.0454586 ])
+</pre></div>
+</div>
+</div>
 </div>
 <p>As expected, evaluating the polynomial on <span class="math notranslate nohighlight">\(1'000\)</span> query points returns an array <span class="math notranslate nohighlight">\(1'000\)</span> points:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yy_poly</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1000,)
 </pre></div>
 </div>
 </div>
@@ -732,6 +802,9 @@ Q(x) = \sum_{\alpha \in A} c_{\mathrm{nwt}, \alpha} \, \Psi_{\mathrm{nwt}, \alph
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/710fa999ab661c962c913bf953e9b515fb8e9d123928eb97beba097af53c4e0a.png" src="../_images/710fa999ab661c962c913bf953e9b515fb8e9d123928eb97beba097af53c4e0a.png" />
+</div>
 </div>
 <p>Shown also in the plot are the location of unisolvent nodes and the corresponding function values.</p>
 </section>
@@ -748,6 +821,11 @@ The norm is defined as:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">yy_test</span> <span class="o">-</span> <span class="n">yy_poly</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.1321948529511282)
 </pre></div>
 </div>
 </div>
@@ -781,6 +859,11 @@ This call returns a callable object that can be used with a set of query points.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.03846154, 0.04058527, 0.04244967, 0.0440694 , 0.0454586 ])
+</pre></div>
+</div>
+</div>
 </div>
 <p>With this short-cut to create an interpolant where evaluation is all that is needed, let’s investigate the convergence of interpolating polynomials with increasing polynomial degrees.,</p>
 <div class="cell docutils container">
@@ -810,6 +893,9 @@ This call returns a callable object that can be used with a set of query points.
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/3ebbd611808cf4531cff7cf15b5b9a0e6911fe607bcb076cee3ccfadaedf34bb.png" src="../_images/3ebbd611808cf4531cff7cf15b5b9a0e6911fe607bcb076cee3ccfadaedf34bb.png" />
+</div>
 </div>
 <p>The convergence of the error is shown below:</p>
 <div class="cell docutils container">
@@ -832,6 +918,9 @@ This call returns a callable object that can be used with a set of query points.
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/030edba1efe30d7893989f52e4fca10a4fdfbb9b7f97d43946eac32eeb2b148f.png" src="../_images/030edba1efe30d7893989f52e4fca10a4fdfbb9b7f97d43946eac32eeb2b148f.png" />
+</div>
 </div>
 <p>The absolute error of the degree 64 polynomials in the domain is shown below:</p>
 <div class="cell tag_hide-input docutils container">
@@ -848,6 +937,9 @@ This call returns a callable object that can be used with a set of query points.
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/355e7824975e9043b30829564e4fc254fd8ad5046fb941623ad1e5d648c108e0.png" src="../_images/355e7824975e9043b30829564e4fc254fd8ad5046fb941623ad1e5d648c108e0.png" />
+</div>
 </div>
 <p>The seemingly random behavior of the (very small) absolute error indicates that machine precision has been reached. Compare it with the absolute error of degree 4 polynomials:</p>
 <div class="cell docutils container">
@@ -856,6 +948,9 @@ This call returns a callable object that can be used with a set of query points.
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/35c33eb5b7ab6c8ee40f35fe750f1d01b8a4a5ecae8bcb32920ded27e5a60efd.png" src="../_images/35c33eb5b7ab6c8ee40f35fe750f1d01b8a4a5ecae8bcb32920ded27e5a60efd.png" />
 </div>
 </div>
 </section>
@@ -894,6 +989,11 @@ in-depth tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx_interp</span><span class="o">.</span><span class="n">to_newton</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f558d53b100&gt;
 </pre></div>
 </div>
 </div>

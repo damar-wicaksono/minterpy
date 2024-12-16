@@ -59,7 +59,7 @@
     <link rel="prev" title="Add Exponents to a Multi-Index Set" href="multi-index-set-add.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g56321ec" />
+  <meta name="docsearch:version" content="0.1.dev1+gfd3df30" />
   </head>
   
   
@@ -525,6 +525,11 @@ A = \left\{ (0, 0, 0), (1, 0, 0), (2, 0, 0), (0, 1, 0), (0, 0, 1) \right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note that the two instances are not identical as shown by the following check:</p>
 <div class="cell docutils container">
@@ -533,11 +538,21 @@ A = \left\{ (0, 0, 0), (1, 0, 0), (2, 0, 0), (0, 1, 0), (0, 0, 1) \right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>as well as the id’s of the instances:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="n">mi_1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">mi_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(140317387724768, 140318069209264)
 </pre></div>
 </div>
 </div>
@@ -560,11 +575,21 @@ A = \left\{ (0, 0, 0), (1, 0, 0), (2, 0, 0), (0, 1, 0), (0, 0, 1) \right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>The inequality between two instances may also be checked via the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_1</span> <span class="o">!=</span> <span class="n">mi_3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -587,6 +612,11 @@ A = \left\{ (0, 0, 0), (1, 0, 0), (2, 0, 0), (0, 1, 0), (0, 0, 1) \right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>Finally, and as expected, two instances having different set of exponents and <span class="math notranslate nohighlight">\(l_p\)</span>-degree are not equal in value:</p>
 <div class="cell docutils container">
@@ -606,6 +636,11 @@ A = \left\{ (0, 0, 0), (1, 0, 0), (2, 0, 0), (0, 1, 0), (0, 0, 1) \right\}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_4</span> <span class="o">!=</span> <span class="n">mi_5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
