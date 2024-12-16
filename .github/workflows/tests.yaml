@@ -32,6 +32,7 @@ jobs:
           name: report-pytest.xml
           path: ./report-pytest.xml
   coverage:
+    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -55,6 +56,8 @@ jobs:
           pytest --junitxml=report-coverage.xml -vvv
       - name: Create coverage badge
         uses: tj-actions/coverage-badge-py@v2
+        with:
+          output: 'coverage-${{ github.ref }}.svg'
       - name: Verify changed files
         uses: tj-actions/verify-changed-files@v16
         id: verify-changed-files
