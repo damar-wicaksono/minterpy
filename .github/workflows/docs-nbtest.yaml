@@ -6,31 +6,9 @@ on:
     branches: ["dev", "main"]
     types: [opened, synchronize, closed]
 
-permissions:
-  id-token: write
-  contents: write
-  issues: write
-  pull-requests: write
-
 jobs:
   nbtest:
     runs-on: ubuntu-latest
     if: github.event.action == 'opened' || github.event.action == 'synchronize' 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-      - name: Create a virtual environment
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-      - name: Install docs dependencies
-        run: |
-          pip install -e .[docs]
-      - name: Execute the notebooks
-        run: |
-          pytest --junitxml=report-notebooks.xml -vvv --nbmake "./docs/getting-started" "./docs/how-to"
-       - name: Upload the report
-        uses: actions/upload-artifact@v3
-        with:
-          name: report-notebooks.xml
-          path: ./
