@@ -23,7 +23,7 @@ jobs:
         with:
           name: report-notebooks-getting-started.xml
           path: ./report-notebooks-getting-started.xml
-  getting_how_to:
+  how_to:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
