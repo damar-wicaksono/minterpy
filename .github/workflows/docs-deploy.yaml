@@ -84,5 +84,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-      - name: Check out repo
-        uses: actions/checkout@v4
