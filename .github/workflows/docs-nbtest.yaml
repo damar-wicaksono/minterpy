@@ -19,3 +19,14 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+      - name: Install docs dependencies
+        run: |
+          pip install -e .[docs]
+      - name: Execute the notebooks
+        run: |
+          pytest --junitxml=report-notebooks.xml -vvv --nbmake "./docs/getting-started" "./docs/how-to"
+      - name: Upload the report
+        uses: actions/upload-artifact@v3
+        with:
+          name: report-notebooks.xml
+          path: ./
