@@ -1,0 +1,38 @@
+name: Test Notebooks-based Documentation
+
+on: 
+  push:
+  pull_request:
+    branches: ["dev", "main"]
+    types: [opened, synchronize, closed]
+
+permissions:
+  id-token: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  docs_preview:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened' || github.event.action == 'synchronize' 
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+      - name: Create a virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+      - name: Install docs dependencies
+        run: |
+          pip install -e .[docs]
+      - name: Execute the notebooks
+        run: |
+          pytest --junitxml=report-notebooks.xml -vvv --nbmake "./docs/getting-started" "./docs/how-to"
+       - name: Upload the report
+        uses: actions/upload-artifact@v3
+        with:
+          name: report-notebooks.xml
+          path: ./
