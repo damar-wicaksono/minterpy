@@ -165,7 +165,7 @@ suppress_warnings = [
 ]
 
 # Flag to execute notebooks-based documentation during build
-nb_execution_mode = "on"
+nb_execution_mode = "auto"
 
 # --- Custom directives -------------------------------------------------------
 

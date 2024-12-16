@@ -25,7 +25,7 @@ jobs:
           sudo apt-get install -y pandoc
       - name: Turn off notebook execution mode
         run: |
-          sed -i 's/^nb_execution_mode = "on"$/nb_execution_mode = "off"/' ./docs/conf.py
+          sed -i 's/^nb_execution_mode = "auto"$/nb_execution_mode = "off"/' ./docs/conf.py
       - name: Build the docs
         run: |
           sphinx-build docs _build
