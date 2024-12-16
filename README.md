@@ -14,6 +14,11 @@
 
 ---
 
+|                                  Branches                                  | Status                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|:--------------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`main`](https://github.com/damar-wicaksono/minterpy/tree/main) (stable)   |  |
+|  [`dev`](https://github.com/damar-wicaksono/minterpy/tree/dev) (latest)    | ![coverage-dev](./coverage-dev.svg)    |
+
 `minterpy` is an open-source Python package for a multivariate generalization
 of the classical Newton and Lagrange interpolation schemes as well as related tasks.
 It is based on an optimized re-implementation of
