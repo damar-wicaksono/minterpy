@@ -52,12 +52,12 @@ jobs:
           export NUMBA_DISABLE_JIT=1
       - name: Run Pytest
         run: |
-          pytest --junitxml=report-pytest.xml -vvv
+          pytest --junitxml=report-pytest-nonumba.xml -vvv
       - name: Upload the report
         uses: actions/upload-artifact@v4
         with:
           name: report-pytest.xml
-          path: ./report-pytest.xml
+          path: ./report-pytest-nonumba.xml
   coverage:
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' }}
     runs-on: ubuntu-latest
