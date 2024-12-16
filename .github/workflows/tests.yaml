@@ -3,6 +3,9 @@ name: Run Test Suite
 on:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   tests:
     runs-on: ubuntu-latest
