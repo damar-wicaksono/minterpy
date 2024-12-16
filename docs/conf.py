@@ -164,6 +164,7 @@ suppress_warnings = [
     'autosummary.import_cycle',
 ]
 
+# Flag to execute notebooks-based documentation during build
 nb_execution_mode = "off"
 
 # --- Custom directives -------------------------------------------------------
