@@ -59,7 +59,7 @@
     <link rel="prev" title="Create a Grid from an Array of Generating Values" href="grid-create-from-value-set.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -484,7 +484,7 @@
 <h1>Create a Grid with a Complete Multi-Index Set<a class="headerlink" href="#create-a-grid-with-a-complete-multi-index-set" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -552,7 +552,7 @@ the generating points.</p>
 <code class="docutils literal notranslate"><span class="pre">from_degree()</span></code> method as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span>
     <span class="n">spatial_dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="n">poly_degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">lp_degree</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span>
@@ -566,7 +566,27 @@ function selected by default, no specification is required.</p>
 <p>The grid has the following unisolvent nodes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  -1. ]
+ [-1.  -1. ]
+ [ 0.5 -1. ]
+ [-0.5 -1. ]
+ [ 1.   1. ]
+ [-1.   1. ]
+ [ 0.5  1. ]
+ [-0.5  1. ]
+ [ 1.  -0.5]
+ [-1.  -0.5]
+ [ 0.5 -0.5]
+ [-0.5 -0.5]
+ [ 1.   0.5]
+ [-1.   0.5]
+ [ 0.5  0.5]
+ [-0.5  0.5]]
 </pre></div>
 </div>
 </div>
@@ -574,11 +594,14 @@ function selected by default, no specification is required.</p>
 <p>The two-dimensional interpolation grid is plotted below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7ec84de55071765a9ff143ded92241fabcb9e545d64dcd09f7b15ab22960dfd2.png" src="../../_images/7ec84de55071765a9ff143ded92241fabcb9e545d64dcd09f7b15ab22960dfd2.png" />
 </div>
 </div>
 <p>This interpolation grid corresponds to the full tensorial grid of two-dimensional polynomials with polynomial degree of <span class="math notranslate nohighlight">\(3\)</span>.</p>

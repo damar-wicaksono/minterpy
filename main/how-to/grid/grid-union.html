@@ -59,7 +59,7 @@
     <link rel="prev" title="Multiply Grid Instances" href="grid-multiply.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -484,7 +484,7 @@
 <h1>Create the Union of <code class="docutils literal notranslate"><span class="pre">Grid</span></code> instances<a class="headerlink" href="#create-the-union-of-grid-instances" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -514,7 +514,7 @@ points are compatible, i.e., they have the same values up to a common dimension 
 <p>First, create the instances of <code class="docutils literal notranslate"><span class="pre">Grid</span></code> according to the above specification:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi_1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]),</span>
     <span class="n">lp_degree</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
 <span class="p">)</span>
@@ -527,17 +527,20 @@ points are compatible, i.e., they have the same values up to a common dimension 
 <p>The unisolvent nodes that correspond to these grids are shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_1</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_1</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_2</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_2</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1cab6d2ed8e6f83cc0bfbceab86b6ea1e4c1116aeeb728a601dc42f9a52586ce.png" src="../../_images/1cab6d2ed8e6f83cc0bfbceab86b6ea1e4c1116aeeb728a601dc42f9a52586ce.png" />
+</div>
 </div>
 <p>The union <code class="docutils literal notranslate"><span class="pre">Grid</span></code> can be obtained as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_union</span> <span class="o">=</span> <span class="n">grd_1</span> <span class="o">|</span> <span class="n">grd_2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_union</span> <span class="o">=</span> <span class="n">grd_1</span> <span class="o">|</span> <span class="n">grd_2</span>
 </pre></div>
 </div>
 </div>
@@ -545,16 +548,34 @@ points are compatible, i.e., they have the same values up to a common dimension 
 <p>And the resulting unisolvent nodes are shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/57fb5f3c73f82bb79f8e63b4491c0b1a9b601aeaf0ed38bf7b11ccdb0e588ee4.png" src="../../_images/57fb5f3c73f82bb79f8e63b4491c0b1a9b601aeaf0ed38bf7b11ccdb0e588ee4.png" />
 </div>
 </div>
 <p>Notice that the underlying multi-index set follows the convention adopted
 for the union of <code class="docutils literal notranslate"><span class="pre">MultiIndexSet</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">multi_index</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">multi_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=3, p=inf)
+[[0 0]
+ [1 0]
+ [2 0]
+ [0 1]
+ [1 1]
+ [2 1]
+ [0 2]
+ [1 2]
+ [2 2]
+ [0 3]]
 </pre></div>
 </div>
 </div>
@@ -575,7 +596,7 @@ with respect to a polynomial degree <span class="math notranslate nohighlight">\
 <p>First, create the two instances of <code class="docutils literal notranslate"><span class="pre">Grid</span></code> following the above specification:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_1</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 <span class="n">grd_2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -584,17 +605,20 @@ with respect to a polynomial degree <span class="math notranslate nohighlight">\
 <p>The unisolvent nodes that correspond to these are shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_1</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grd_1</span><span class="o">.</span><span class="n">multi_index</span><span class="p">)))</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_2</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_2</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2b2589cb635965199df20f5d6dd26772c44561cd2f69895de7925e205d6eee53.png" src="../../_images/2b2589cb635965199df20f5d6dd26772c44561cd2f69895de7925e205d6eee53.png" />
+</div>
 </div>
 <p>The union <code class="docutils literal notranslate"><span class="pre">Grid</span></code> can be obtained as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_union</span> <span class="o">=</span> <span class="n">grd_1</span> <span class="o">|</span> <span class="n">grd_2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_union</span> <span class="o">=</span> <span class="n">grd_1</span> <span class="o">|</span> <span class="n">grd_2</span>
 </pre></div>
 </div>
 </div>
@@ -602,15 +626,31 @@ with respect to a polynomial degree <span class="math notranslate nohighlight">\
 <p>And the resulting unisolvent nodes are shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_union</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/812b023a1c8f258452d3ac9d9b554a3d36d1dacde1f6bb5ff80b67bf5054ad06.png" src="../../_images/812b023a1c8f258452d3ac9d9b554a3d36d1dacde1f6bb5ff80b67bf5054ad06.png" />
 </div>
 </div>
 <p>As expected the resulting <code class="docutils literal notranslate"><span class="pre">Grid</span></code> is two-dimensional according to the largest dimension of the operands. The resulting multi-index set is shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">multi_index</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd_union</span><span class="o">.</span><span class="n">multi_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=4, p=1.0)
+[[0 0]
+ [1 0]
+ [2 0]
+ [3 0]
+ [4 0]
+ [0 1]
+ [1 1]
+ [0 2]]
 </pre></div>
 </div>
 </div>

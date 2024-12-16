@@ -59,7 +59,7 @@
     <link rel="prev" title="Integration" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -524,6 +524,9 @@ f(x) = e^{-1.4 x} \sin{(3.5 \pi x)},\;\; x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7072b5797f7b9778b2341bb0eb50f439db071f1658940b53422002b20c18d7f0.png" src="../../_images/7072b5797f7b9778b2341bb0eb50f439db071f1658940b53422002b20c18d7f0.png" />
+</div>
 </div>
 </section>
 <section id="polynomial-interpolation">
@@ -584,6 +587,11 @@ Then, create the interpolation grid given multi-index set:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.049018277818983005
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="integration-over-specified-bounds">
@@ -595,11 +603,21 @@ Then, create the interpolation grid given multi-index set:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.04328650053261674
+</pre></div>
+</div>
+</div>
 </div>
 <p>Similarly, to integrate the polynomial over <span class="math notranslate nohighlight">\([0, 1]\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lag_poly</span><span class="o">.</span><span class="n">integrate_over</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.09230477835159537
 </pre></div>
 </div>
 </div>
@@ -616,12 +634,22 @@ Below is the integration in the Newton basis:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0490182778189841
+</pre></div>
+</div>
+</div>
 </div>
 <p>And in the canonical basis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">can_poly</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">LagrangeToCanonical</span><span class="p">(</span><span class="n">lag_poly</span><span class="p">)()</span>
 <span class="n">can_poly</span><span class="o">.</span><span class="n">integrate_over</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.049018433527192186
 </pre></div>
 </div>
 </div>

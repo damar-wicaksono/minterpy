@@ -59,7 +59,7 @@
     <link rel="prev" title="Grid" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -484,7 +484,7 @@
 <h1>Create a Grid with a Generating Function<a class="headerlink" href="#create-a-grid-with-a-generating-function" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -526,7 +526,15 @@ The function returns the following generating points in two dimensions
 with maximum polynomial degree of <span class="math notranslate nohighlight">\(3\)</span> in every dimension:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">mp</span><span class="o">.</span><span class="n">gen_points</span><span class="o">.</span><span class="n">gen_points_chebyshev</span><span class="p">(</span><span class="n">poly_degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">spatial_dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mp</span><span class="o">.</span><span class="n">gen_points</span><span class="o">.</span><span class="n">gen_points_chebyshev</span><span class="p">(</span><span class="n">poly_degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">spatial_dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1. , -1. ],
+       [-1. ,  1. ],
+       [ 0.5, -0.5],
+       [-0.5,  0.5]])
 </pre></div>
 </div>
 </div>
@@ -562,7 +570,7 @@ polynomials having a multi-index set
 <p>Create an instance of <code class="docutils literal notranslate"><span class="pre">MultiIndexSet</span></code> following the above specification:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">exponents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exponents</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -580,14 +588,29 @@ polynomials having a multi-index set
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">lp_degree</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MultiIndexSet</span><span class="p">(</span><span class="n">exponents</span><span class="p">,</span> <span class="n">lp_degree</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=4, p=2.0)
+[[0 0]
+ [1 0]
+ [2 0]
+ [3 0]
+ [0 1]
+ [1 1]
+ [0 2]
+ [1 2]
+ [0 3]
+ [0 4]]
 </pre></div>
 </div>
 </div>
@@ -598,7 +621,7 @@ polynomials having a multi-index set
 <p>The generating function for equidistant points can be defined as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">equidistant_gen_function</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">equidistant_gen_function</span><span class="p">(</span>
     <span class="n">poly_degree</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
     <span class="n">spatial_dimension</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
@@ -614,7 +637,15 @@ polynomials having a multi-index set
 and spatial dimension <span class="math notranslate nohighlight">\(3\)</span> are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">equidistant_gen_function</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">equidistant_gen_function</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.         -1.         -1.        ]
+ [-0.33333333 -0.33333333 -0.33333333]
+ [ 0.33333333  0.33333333  0.33333333]
+ [ 1.          1.          1.        ]]
 </pre></div>
 </div>
 </div>
@@ -627,7 +658,7 @@ an instance of <code class="docutils literal notranslate"><span class="pre">Grid
 as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_function</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">equidistant_gen_function</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_function</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">equidistant_gen_function</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -635,7 +666,21 @@ as follows:</p>
 <p>The grid has the following unisolvent nodes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-1.  -1. ]
+ [-0.5 -1. ]
+ [ 0.  -1. ]
+ [ 0.5 -1. ]
+ [-1.  -0.5]
+ [-0.5 -0.5]
+ [-1.   0. ]
+ [-0.5  0. ]
+ [-1.   0.5]
+ [-1.   1. ]]
 </pre></div>
 </div>
 </div>
@@ -643,11 +688,14 @@ as follows:</p>
 <p>Finally, the two-dimensional interpolation grid is plotted below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ae2ab0b10d20608b93d48ec88fa5a7f33659e3f2b9a9ea0c4f284fbea5c12186.png" src="../../_images/ae2ab0b10d20608b93d48ec88fa5a7f33659e3f2b9a9ea0c4f284fbea5c12186.png" />
 </div>
 </div>
 </section>

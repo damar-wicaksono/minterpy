@@ -59,7 +59,7 @@
     <link rel="prev" title="Getting Started with Minterpy" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -517,6 +517,9 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/4314dbe6149ad15fdbd91df1307f9f0a8ddcf0bd7cb8e7a7d944fa40998b4987.png" src="../_images/4314dbe6149ad15fdbd91df1307f9f0a8ddcf0bd7cb8e7a7d944fa40998b4987.png" />
+</div>
 </div>
 <section id="one-dimensional-interpolant">
 <h3>One-dimensional interpolant<a class="headerlink" href="#one-dimensional-interpolant" title="Link to this heading">#</a></h3>
@@ -537,6 +540,11 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpolant()
+</pre></div>
+</div>
+</div>
 </div>
 <p>Congratulations on creating your first interpolant in Minterpy!</p>
 <p>Having obtained an interpolant, you can evaluate it at a set of query points:</p>
@@ -544,6 +552,12 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx_test_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>  <span class="c1"># 1000 query points</span>
 <span class="n">interp_1d</span><span class="p">(</span><span class="n">xx_test_1d</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># Show the first 10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.53657292, -0.57490919, -0.61118339, -0.64544674, -0.67774961,
+       -0.70814161, -0.73667155, -0.76338745, -0.78833657, -0.81156539])
 </pre></div>
 </div>
 </div>
@@ -566,6 +580,9 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/8a68e37e771c7b53193610ec6e862e3d069074a95c2d9f976de0b8adc362b9d6.png" src="../_images/8a68e37e771c7b53193610ec6e862e3d069074a95c2d9f976de0b8adc362b9d6.png" />
+</div>
 </div>
 <p>It seems that the interpolant still a bit off and does not approximate the function nicely.</p>
 </section>
@@ -582,6 +599,11 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fun_1d</span><span class="p">(</span><span class="n">xx_test_1d</span><span class="p">)</span> <span class="o">-</span> <span class="n">interp_1d</span><span class="p">(</span><span class="n">xx_test_1d</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.4210121066955669)
 </pre></div>
 </div>
 </div>
@@ -614,6 +636,9 @@ f(x) = x \, \sin{(12 x)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/26679311fb434d061597cca18ea79fbe8b0380586a5a889d2824af9736448b4f.png" src="../_images/26679311fb434d061597cca18ea79fbe8b0380586a5a889d2824af9736448b4f.png" />
+</div>
 </div>
 <p>Visually, there is no notable difference between the interpolant of degree <span class="math notranslate nohighlight">\(32\)</span> and the original function.
 And indeed the infinity norm is now:</p>
@@ -629,6 +654,11 @@ And indeed the infinity norm is now:</p>
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.6330938257833623e-12)
+</pre></div>
+</div>
+</div>
 </div>
 <p>which is close to numerical convergence.</p>
 </section>
@@ -703,6 +733,9 @@ f(x_1, x_2) = \sin{\pi (1.5 x_1 + 2.5 x_2)}, x_1, x_2 \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/b399b5cb60e8ac6b8e42440fa274a44d23c3f1a1f3f376cbc7191baa71bae4c6.png" src="../_images/b399b5cb60e8ac6b8e42440fa274a44d23c3f1a1f3f376cbc7191baa71bae4c6.png" />
+</div>
 </div>
 <section id="two-dimension-interpolant">
 <h3>Two-dimension interpolant<a class="headerlink" href="#two-dimension-interpolant" title="Link to this heading">#</a></h3>
@@ -774,6 +807,9 @@ f(x_1, x_2) = \sin{\pi (1.5 x_1 + 2.5 x_2)}, x_1, x_2 \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/0d089cbea41b521f0ddbdaa947c92b87c16380d42e752d1a51500bc69b9d0fb8.png" src="../_images/0d089cbea41b521f0ddbdaa947c92b87c16380d42e752d1a51500bc69b9d0fb8.png" />
+</div>
 </div>
 </section>
 <section id="assessing-2d-interpolant-accuracy">
@@ -786,6 +822,11 @@ To estimate it using, say, <span class="math notranslate nohighlight">\(100'000\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">194</span><span class="p">)</span>
 <span class="n">xx_test_2d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fun_2d</span><span class="p">(</span><span class="n">xx_test_2d</span><span class="p">)</span> <span class="o">-</span> <span class="n">interp_2d</span><span class="p">(</span><span class="n">xx_test_2d</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.8096635301390052e-14)
 </pre></div>
 </div>
 </div>
@@ -836,6 +877,11 @@ To estimate it using, say, <span class="math notranslate nohighlight">\(10'000\)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx_test_4d</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fun_md</span><span class="p">(</span><span class="n">xx_test_4d</span><span class="p">)</span> <span class="o">-</span> <span class="n">interp_4d</span><span class="p">(</span><span class="n">xx_test_4d</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.7148324011895255e-05)
 </pre></div>
 </div>
 </div>

@@ -59,7 +59,7 @@
     <link rel="prev" title="Multi-Index Sets" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -524,6 +524,22 @@ The constructor takes the following (positional) arguments:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=3, n=2, p=2.0)
+[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [0 1 0]
+ [1 1 0]
+ [0 2 0]
+ [0 0 1]
+ [1 0 1]
+ [0 1 1]
+ [1 1 1]
+ [0 0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -533,6 +549,21 @@ The constructor takes the following (positional) arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="o">.</span><span class="n">exponents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0]
+ [1 0 0]
+ [2 0 0]
+ [0 1 0]
+ [1 1 0]
+ [0 2 0]
+ [0 0 1]
+ [1 0 1]
+ [0 1 1]
+ [1 1 1]
+ [0 0 2]]
 </pre></div>
 </div>
 </div>
@@ -557,6 +588,15 @@ A = \left\{ (0, 0), (1, 0), (0, 1), (0, 3), (0, 2)\right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0],
+       [1, 0],
+       [0, 1],
+       [0, 2],
+       [0, 3]])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,11 +612,26 @@ A = \left\{ (0, 0), (1, 0), (0, 1), (0, 3), (0, 2)\right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=3, p=1.0)
+[[0 0]
+ [1 0]
+ [0 1]
+ [0 2]
+ [0 3]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>…and the <span class="math notranslate nohighlight">\(l_p\)</span>-degree as given:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="o">.</span><span class="n">lp_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -589,11 +644,21 @@ A = \left\{ (0, 0), (1, 0), (0, 1), (0, 3), (0, 2)\right\}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
 </div>
 <p>The polynomial degree of the multi-index set is also inferred from the given exponents and the <span class="math notranslate nohighlight">\(l_p\)</span>-degree (the <span class="math notranslate nohighlight">\(l_p\)</span>-degree, on the other hand, cannot be inferred from the exponents and therefore must be provided):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="o">.</span><span class="n">poly_degree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>

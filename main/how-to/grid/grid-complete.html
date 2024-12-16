@@ -59,7 +59,7 @@
     <link rel="prev" title="Add Exponents to a Grid" href="grid-add.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -521,11 +521,23 @@ unisolvent nodes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=2, p=2.0)
+[[1 0]
+ [0 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>This set has a polynomial degree of:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">poly_degree</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
 </pre></div>
 </div>
 </div>
@@ -553,6 +565,11 @@ unisolvent nodes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>The check indicates that the given grid is not complete with respect to the given polynomial degree and <span class="math notranslate nohighlight">\(l_p\)</span>-degree.</p>
 </section>
@@ -575,11 +592,29 @@ Calling the method returns a new instance of <code class="docutils literal notra
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>because the underlying multi-index set is now also complete (with respect to <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(2.0\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_complete</span><span class="o">.</span><span class="n">multi_index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(
+  array([[0, 0],
+         [1, 0],
+         [2, 0],
+         [0, 1],
+         [1, 1],
+         [0, 2]]),
+  lp_degree=2.0
+)
 </pre></div>
 </div>
 </div>
@@ -592,6 +627,9 @@ Calling the method returns a new instance of <code class="docutils literal notra
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd_complete</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd_complete</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2d2681a0f494b71ad212950956f4cae5021186fb2bfc611dbbce309063436044.png" src="../../_images/2d2681a0f494b71ad212950956f4cae5021186fb2bfc611dbbce309063436044.png" />
 </div>
 </div>
 </section>

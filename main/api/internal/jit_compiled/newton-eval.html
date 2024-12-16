@@ -59,7 +59,7 @@
     <link rel="prev" title="newton_diff" href="newton-diff.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -576,13 +576,13 @@ coefficient sets of the same multi-index set</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – numpy array with coordinates of points where polynomial is to be evaluated.
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – numpy array with coordinates of points where polynomial is to be evaluated.
 The shape has to be <code class="docutils literal notranslate"><span class="pre">(k</span> <span class="pre">x</span> <span class="pre">m)</span></code>.</p></li>
-<li><p><strong>exponents</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – numpy array with exponents for the polynomial. The shape has to be <code class="docutils literal notranslate"><span class="pre">(N</span> <span class="pre">x</span> <span class="pre">m)</span></code>.</p></li>
-<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – generating points used to generate the grid. The shape is <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">x</span> <span class="pre">m)</span></code>.</p></li>
-<li><p><strong>max_exponents</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – array with maximum exponent in each dimension. The shape has to be <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p></li>
-<li><p><strong>products_placeholder</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – a numpy array for storing the (chained) products.</p></li>
-<li><p><strong>monomials_placeholder</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>) – placeholder numpy array where the results of evaluation are stored.
+<li><p><strong>exponents</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – numpy array with exponents for the polynomial. The shape has to be <code class="docutils literal notranslate"><span class="pre">(N</span> <span class="pre">x</span> <span class="pre">m)</span></code>.</p></li>
+<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – generating points used to generate the grid. The shape is <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">x</span> <span class="pre">m)</span></code>.</p></li>
+<li><p><strong>max_exponents</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – array with maximum exponent in each dimension. The shape has to be <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p></li>
+<li><p><strong>products_placeholder</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – a numpy array for storing the (chained) products.</p></li>
+<li><p><strong>monomials_placeholder</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>) – placeholder numpy array where the results of evaluation are stored.
 The shape has to be <code class="docutils literal notranslate"><span class="pre">(k</span> <span class="pre">x</span> <span class="pre">p)</span></code>.</p></li>
 <li><p><strong>triangular</strong> (<a class="reference external" href="https://docs.python.org/dev/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – whether the output will be of lower triangular form or not.
 -&gt; will skip the evaluation of some values</p></li>

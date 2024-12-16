@@ -59,7 +59,7 @@
     <link rel="prev" title="Create the Union of Grid instances" href="grid-union.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -484,7 +484,7 @@
 <h1>Add Exponents to a Grid<a class="headerlink" href="#add-exponents-to-a-grid" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">minterpy</span> <span class="k">as</span> <span class="nn">mp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -501,7 +501,7 @@ underlying multi-index set. The <code class="docutils literal notranslate"><span
 set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>, polynomial degree <span class="math notranslate nohighlight">\(2\)</span>, and <span class="math notranslate nohighlight">\(l_p\)</span>-degree <span class="math notranslate nohighlight">\(1.0\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Grid</span><span class="o">.</span><span class="n">from_degree</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,7 +513,7 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 <p>For instance, to add a new exponent <span class="math notranslate nohighlight">\((3, 0)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_added_1</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_added_1</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -521,7 +521,7 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 <p>Compare the unisolvent nodes before and after adding the exponent:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">grd_added_1</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
@@ -531,13 +531,13 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a3f0435f4b41935cc53113809e5c365929f9cf80cae8488fd6b4657c5978004.png" src="../../_images/0a3f0435f4b41935cc53113809e5c365929f9cf80cae8488fd6b4657c5978004.png" />
+<img alt="../../_images/9af01410bcf39655ac4cc7cfe38bdf1c4e18bd901e8635f11aa82f7d2c28a3c7.png" src="../../_images/9af01410bcf39655ac4cc7cfe38bdf1c4e18bd901e8635f11aa82f7d2c28a3c7.png" />
 </div>
 </div>
 <p>Notice that now the grid may support polynomial up to dimension <span class="math notranslate nohighlight">\(3\)</span> in the first dimension.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span><span class="o">.</span><span class="n">multi_index</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span><span class="o">.</span><span class="n">multi_index</span>
 </pre></div>
 </div>
 </div>
@@ -562,7 +562,7 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 <p>For instance, to add the exponents <span class="math notranslate nohighlight">\(\{ (3, 0),  (2, 1), (0, 3) \}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_added_2</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd_added_2</span> <span class="o">=</span> <span class="n">grd</span><span class="o">.</span><span class="n">add_exponents</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
 <span class="p">)</span>
 </pre></div>
@@ -572,7 +572,7 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 <p>Compare the unisolvent nodes before and after adding the new multi-index elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">grd</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">grd_added_2</span><span class="o">.</span><span class="n">unisolvent_nodes</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
@@ -582,7 +582,7 @@ set of spatial dimension <span class="math notranslate nohighlight">\(2\)</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d787ca9e54dd8feca97f48a06191cc4e12d875adf0b596b31d289eb73924cc75.png" src="../../_images/d787ca9e54dd8feca97f48a06191cc4e12d875adf0b596b31d289eb73924cc75.png" />
+<img alt="../../_images/a4eb3795acf73e2a6a4972e4f7856daf7acf25364e53ffa27728482c7ee77d61.png" src="../../_images/a4eb3795acf73e2a6a4972e4f7856daf7acf25364e53ffa27728482c7ee77d61.png" />
 </div>
 </div>
 </section>

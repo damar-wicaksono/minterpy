@@ -59,7 +59,7 @@
     <link rel="prev" title="Make a Grid Complete" href="grid-complete.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -528,6 +528,13 @@ unisolvent nodes.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MultiIndexSet(m=2, n=3, p=2.0)
+[[1 0]
+ [1 2]]
+</pre></div>
+</div>
+</div>
 </div>
 <p>An instance of <code class="docutils literal notranslate"><span class="pre">Grid</span></code> given the multi-index set can then be created as follows:</p>
 <div class="cell docutils container">
@@ -545,6 +552,11 @@ unisolvent nodes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grd</span><span class="o">.</span><span class="n">is_downward_closed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -569,6 +581,11 @@ Calling the method returns a new instance of <code class="docutils literal notra
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>The unisolvent nodes of incomplete and complete grids are shown below:</p>
 <div class="cell docutils container">
@@ -581,6 +598,9 @@ Calling the method returns a new instance of <code class="docutils literal notra
 <span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7deaa2fb5531fdef0c18087c887e36ee037be337d41f6eb96d8ad60b5440594c.png" src="../../_images/7deaa2fb5531fdef0c18087c887e36ee037be337d41f6eb96d8ad60b5440594c.png" />
 </div>
 </div>
 <p>Note that, strictly speaking, the nodes shown on the left plot is not

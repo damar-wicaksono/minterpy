@@ -59,7 +59,7 @@
     <link rel="prev" title="Basic Arithmetic Operations with Polynomials" href="arithmetic-operations-with-polynomials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -561,6 +561,9 @@ You’ve also explored the basic <a class="reference internal" href="arithmetic-
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/5fd433f26515a9e9ce85c34e827edb370b27f4e05facc6a23859d978de674147.png" src="../_images/5fd433f26515a9e9ce85c34e827edb370b27f4e05facc6a23859d978de674147.png" />
+</div>
 </div>
 <p>You can construct a (Newton) polynomial that approximates the above function with the following:</p>
 <div class="cell docutils container">
@@ -589,6 +592,11 @@ You’ve also explored the basic <a class="reference internal" href="arithmetic-
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.966333197728832e-07
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="integration">
@@ -603,6 +611,11 @@ I[Q] = \int_{\Omega} Q(\boldsymbol{x}) \, d\boldsymbol{x},
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="o">.</span><span class="n">integrate_over</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7757899777014259
 </pre></div>
 </div>
 </div>
@@ -622,6 +635,11 @@ This allows you to compute integrals over particular regions of interest.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="o">.</span><span class="n">integrate_over</span><span class="p">(</span><span class="n">bounds</span><span class="o">=</span><span class="p">[[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.39984157731754727
 </pre></div>
 </div>
 </div>
@@ -676,12 +694,22 @@ This allows you to compute integrals over particular regions of interest.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f3954b52e60&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>or the polynomial <span class="math notranslate nohighlight">\(\frac{\partial Q}{\partial x_2}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_diff_1_1</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">partial_diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">poly_diff_1_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f3954a092a0&gt;
 </pre></div>
 </div>
 </div>
@@ -742,6 +770,9 @@ This allows you to compute integrals over particular regions of interest.</p>
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/7164f1c93067e93657e4f6811dcd8a97bc8e93004c3fcc6dcf4b79dcddde7ba8.png" src="../_images/7164f1c93067e93657e4f6811dcd8a97bc8e93004c3fcc6dcf4b79dcddde7ba8.png" />
+</div>
 </div>
 <p>The method <a class="reference internal" href="../api/polynomials/newton.html#minterpy.polynomials.newton_polynomial.NewtonPolynomial.diff" title="minterpy.polynomials.newton_polynomial.NewtonPolynomial.diff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">diff()</span></code></a> allows you to specify the order of derivative for each spatial dimension simultaneously by passing a list or NumPy array.</p>
 <p>See the following table for examples.</p>
@@ -775,12 +806,22 @@ This allows you to compute integrals over particular regions of interest.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f3954bd6830&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>or the polynomial <span class="math notranslate nohighlight">\(\frac{\partial^3 Q}{\partial x_1^2 \partial x_2}\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_diff_0_2_1_1</span> <span class="o">=</span> <span class="n">poly</span><span class="o">.</span><span class="n">diff</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">poly_diff_0_2_1_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7f3954bd7cd0&gt;
 </pre></div>
 </div>
 </div>
@@ -841,6 +882,9 @@ This allows you to compute integrals over particular regions of interest.</p>
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/778506ca96fd82d5bb376a83489f47a32fa6ca8f260aec8a0c2a032b747d5a76.png" src="../_images/778506ca96fd82d5bb376a83489f47a32fa6ca8f260aec8a0c2a032b747d5a76.png" />
+</div>
 </div>
 </section>
 <section id="summary">

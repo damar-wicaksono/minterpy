@@ -59,7 +59,7 @@
     <link rel="prev" title="Multidimensional Polynomial Interpolation" href="md-polynomial-interpolation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g60d4a05" />
+  <meta name="docsearch:version" content="0.1.dev1+ge2df274" />
   </head>
   
   
@@ -527,6 +527,11 @@ f_1(x) = \sin{(5 \pi x)}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.977688121103995e-07
+</pre></div>
+</div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -571,6 +576,11 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2265188864546417e-12
+</pre></div>
+</div>
+</div>
 </div>
 <p>The plots of both interpolating polynomials are shown below.</p>
 <div class="cell tag_hide-input docutils container">
@@ -607,6 +617,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/8610192821ddaaaf0c705f36a995d3f42b7a9df94dc8d456465f123aa323c974.png" src="../_images/8610192821ddaaaf0c705f36a995d3f42b7a9df94dc8d456465f123aa323c974.png" />
+</div>
 </div>
 <p>The plots show that are no notable differences between the two true functions and their corresponding interpolating polynomials.</p>
 <hr class="docutils" />
@@ -623,12 +636,22 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd77a60d30&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>or:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_scalar_sub</span> <span class="o">=</span> <span class="n">poly_1</span> <span class="o">-</span> <span class="mi">5</span>
 <span class="n">poly_scalar_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd77a62f20&gt;
 </pre></div>
 </div>
 </div>
@@ -665,6 +688,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/705c556ecf04f34ed92a1f0275bce1cfa0dc83413da67782c0cae73506d45c9c.png" src="../_images/705c556ecf04f34ed92a1f0275bce1cfa0dc83413da67782c0cae73506d45c9c.png" />
+</div>
 </div>
 <p>Polynomials may also be added or subtracted from each other; the result is once again another polynomial.</p>
 <p>For instance, <span class="math notranslate nohighlight">\(Q_{\mathrm{add}} (x) = Q_1(x) + Q_2(x)\)</span>:</p>
@@ -675,12 +701,22 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd78f30160&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <p>or <span class="math notranslate nohighlight">\(Q_{\mathrm{sub}} (x) = Q_1(x) - Q_2(x)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_sub</span> <span class="o">=</span> <span class="n">poly_1</span> <span class="o">-</span> <span class="n">poly_2</span>
 <span class="n">poly_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd759c1360&gt;
 </pre></div>
 </div>
 </div>
@@ -717,6 +753,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/9355ca4fbd9395d3c6d7b1f50fad470717858329356f07d04a6f28a8cc35df24.png" src="../_images/9355ca4fbd9395d3c6d7b1f50fad470717858329356f07d04a6f28a8cc35df24.png" />
+</div>
 </div>
 </section>
 <section id="multiplication">
@@ -727,6 +766,11 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_scalar_mul</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="n">poly_2</span>
 <span class="n">poly_scalar_mul</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd747a74f0&gt;
 </pre></div>
 </div>
 </div>
@@ -751,6 +795,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/32d6409f746e22fc2549f9c46911d0d14a4f1b883d6dfd4e3f80f4db0b8c8fe4.png" src="../_images/32d6409f746e22fc2549f9c46911d0d14a4f1b883d6dfd4e3f80f4db0b8c8fe4.png" />
+</div>
 </div>
 <p>Furthermore, a multiplication between Minterpy polynomials is also a valid operation that returns a polynomial.</p>
 <p>For instance <span class="math notranslate nohighlight">\(Q_1 \times Q_2\)</span>:</p>
@@ -758,6 +805,11 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_mul</span> <span class="o">=</span> <span class="n">poly_1</span> <span class="o">*</span> <span class="n">poly_2</span>
 <span class="n">poly_mul</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd7463ba90&gt;
 </pre></div>
 </div>
 </div>
@@ -799,6 +851,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/515eb7b3ed50fb69fd4e35ffff8f39bb884b34bc3c3c02b7637eb9e5bfe228b8.png" src="../_images/515eb7b3ed50fb69fd4e35ffff8f39bb884b34bc3c3c02b7637eb9e5bfe228b8.png" />
+</div>
 </div>
 <p>As expected the product polynomial is an exponentially decaying sine function.</p>
 </section>
@@ -810,6 +865,11 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_scalar_div</span> <span class="o">=</span> <span class="n">poly_1</span> <span class="o">/</span> <span class="mf">4.0</span>
 <span class="n">poly_scalar_div</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd77bfeb90&gt;
 </pre></div>
 </div>
 </div>
@@ -834,6 +894,9 @@ f_2(x) = 2.0 \, e^{-2.5 (x + 1)}, x \in [-1, 1].
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/545ad1db7901e1236474ffc29547bd3e9ca9252ca7f8a203247c7f5c668da0d4.png" src="../_images/545ad1db7901e1236474ffc29547bd3e9ca9252ca7f8a203247c7f5c668da0d4.png" />
+</div>
 </div>
 <p>Minterpy, however, does <strong>not support</strong> polynomial-polynomial division (rational function). Minterpy cannot evaluate the resulting function of the expression:</p>
 <div class="math notranslate nohighlight">
@@ -857,6 +920,11 @@ Q_3(x) = \frac{Q_1(x)}{Q_2(x)}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;minterpy.polynomials.newton_polynomial.NewtonPolynomial at 0x7fdd7937ded0&gt;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -877,6 +945,9 @@ Q_3(x) = \frac{Q_1(x)}{Q_2(x)}
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/4ac9270b1022019879c1a5d9747412c71c3ecfa0ee6b4425262ad15360b975ec.png" src="../_images/4ac9270b1022019879c1a5d9747412c71c3ecfa0ee6b4425262ad15360b975ec.png" />
+</div>
 </div>
 <p>Polynomial exponentiation by a non-negative integer is a syntactic sugar for multiple polynomial self multiplications.</p>
 <p>For instance, <span class="math notranslate nohighlight">\(Q_2^2(x) = Q_2(x) \times Q_2(x)\)</span>:</p>
@@ -886,11 +957,21 @@ Q_3(x) = \frac{Q_1(x)}{Q_2(x)}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
 </div>
 <p>or <span class="math notranslate nohighlight">\(Q_2^3(x) = Q_2(x) \times Q_2(x) \times Q_2(x)\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_2</span><span class="o">**</span><span class="mi">3</span> <span class="o">==</span> <span class="n">poly_2</span> <span class="o">*</span> <span class="n">poly_2</span> <span class="o">*</span> <span class="n">poly_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -935,6 +1016,9 @@ Q_3(x) = \frac{Q_1(x)}{Q_2(x)}
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<img alt="../_images/2141e0e1f7c355291a941d17934b35310c575c3d0cc5010ab1d8a20ddbf91db1.png" src="../_images/2141e0e1f7c355291a941d17934b35310c575c3d0cc5010ab1d8a20ddbf91db1.png" />
+</div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
