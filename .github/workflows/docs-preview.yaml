@@ -1,4 +1,5 @@
 name: Documentation Preview
+description: Create a preview of the docs on pull request (notebooks are not executed)
 
 on: 
   pull_request:

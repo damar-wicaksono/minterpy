@@ -1,4 +1,5 @@
 name: Documentation Build and Deployment
+description: Build and deploy the documentation on pushes to 'main' and 'dev' branches
 
 on: 
   push:

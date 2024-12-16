@@ -1,21 +1,17 @@
-name: Test Notebooks-based Documentation
+name: Test Notebook-based Documentation
+description: Execute the notebook-based documentation for testing
 
 on: 
   push:
-  pull_request:
-    branches: ["dev", "main"]
 
 jobs:
   getting_started:
-    if: github.event_name != 'push' || github.event.pull_request == null
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
+      - name: Check out the repo
         uses: actions/checkout@v4
       - name: Run shared steps
         uses: ./.github/actions/shared-steps
-        with:
-          message: 'Executing Getting Started'
       - name: Execute the notebooks
         run: |
           pytest --junitxml=report-notebooks-getting-started.xml -vvv --nbmake "./docs/getting-started"
@@ -25,18 +21,15 @@ jobs:
           name: report-notebooks-getting-started.xml
           path: ./report-notebooks-getting-started.xml
   how_to:
-    if: github.event_name != 'push' || github.event.pull_request == null
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo
+      - name: Check out the repo
         uses: actions/checkout@v4
       - name: Run shared steps
         uses: ./.github/actions/shared-steps
-        with:
-          message: 'Executing How-To'
       - name: Execute the notebooks
         run: |
-          pytest --junitxml=report-notebooks-getting-how-to.xml -vvv --nbmake "./docs/how-to"
+          pytest --junitxml=report-notebooks-how-to.xml -vvv --nbmake "./docs/how-to"
       - name: Upload the report
         uses: actions/upload-artifact@v4
         with:
