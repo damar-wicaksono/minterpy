@@ -59,7 +59,7 @@
     <link rel="prev" title="regression" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g774cba0" />
+  <meta name="docsearch:version" content="0.1.dev1+gd3735ca" />
   </head>
   
   
@@ -710,7 +710,7 @@ created and used for prediction.</p></li>
 <dd><p>Get the regression matrix on a set of query points.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Evaluation points, an array of shape <span class="math notranslate nohighlight">\(N_e \times M\)</span>, where
+<dd class="field-odd"><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Evaluation points, an array of shape <span class="math notranslate nohighlight">\(N_e \times M\)</span>, where
 <span class="math notranslate nohighlight">\(N_e\)</span> and <span class="math notranslate nohighlight">\(M\)</span> correspond to the number of evaluation
 points and the number of spatial dimensions, respectively.</p>
 </dd>
@@ -721,7 +721,7 @@ an array of shape <span class="math notranslate nohighlight">\(N_e \times N_b\)<
 points and the number of monomials, respectively.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -752,9 +752,9 @@ from the following relation:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Input matrix, also known as the training inputs.</p></li>
-<li><p><strong>yy</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Response vector, observed or evaluated at <code class="docutils literal notranslate"><span class="pre">xx</span></code>.</p></li>
-<li><p><strong>weights</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – Individual weights for each input points.
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Input matrix, also known as the training inputs.</p></li>
+<li><p><strong>yy</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Response vector, observed or evaluated at <code class="docutils literal notranslate"><span class="pre">xx</span></code>.</p></li>
+<li><p><strong>weights</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – Individual weights for each input points.
 The default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p><strong>lstsq_solver</strong> (Union[<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="docutils literal notranslate"><span class="pre">Callable</span></code>], optional) – <p>Least-square solver. The default is <code class="docutils literal notranslate"><span class="pre">&quot;lstsq&quot;</span></code> from <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html">SciPy</a>.
 The additional following linear solvers are available
@@ -798,7 +798,7 @@ of the solver for the list of supported keyword arguments.</p></li>
 <dd><p>Predict using the fitted polynomial model a set of points.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Query points, a two-dimensional array of shape
+<dd class="field-odd"><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – Query points, a two-dimensional array of shape
 <span class="math notranslate nohighlight">\(N_q \times M\)</span>, where <span class="math notranslate nohighlight">\(N_q\)</span> and <span class="math notranslate nohighlight">\(M\)</span> correspond to
 the number of query points and the number of spatial dimensions,
 respectively.</p>
@@ -808,7 +808,7 @@ respectively.</p>
 array of length <span class="math notranslate nohighlight">\(N_q\)</span>, the number of query points.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>

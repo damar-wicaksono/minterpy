@@ -59,7 +59,7 @@
     <link rel="prev" title="ABC" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g774cba0" />
+  <meta name="docsearch:version" content="0.1.dev1+gd3735ca" />
   </head>
   
   
@@ -560,7 +560,7 @@ while allowing each concrete class to manage its own implementation details.</p>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC.coeffs">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coeffs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC.coeffs" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coeffs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC.coeffs" title="Link to this definition">#</a></dt>
 <dd><p>Abstract container which stores the coefficients of the polynomial.</p>
 <p>This is a placeholder of the ABC, which is overwritten by the concrete implementation.</p>
 </dd></dl>
@@ -599,7 +599,7 @@ by the concrete implementation.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>poly</strong> (<a class="reference internal" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC" title="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC"><em>MultivariatePolynomialABC</em></a>) – A concrete instance of a polynomial class that can be evaluated
 on a set of query points.</p></li>
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
 of shape <code class="docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">m)</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the number of query points and
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -620,7 +620,7 @@ coefficient sets.</p></li>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -649,7 +649,7 @@ and each row is of length <span class="math notranslate nohighlight">\(m\)</span
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
 of shape <code class="docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">m)</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the number of query points and
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -670,7 +670,7 @@ coefficient sets.</p></li>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -703,10 +703,10 @@ coefficient sets.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>multi_index</strong> (<a class="reference internal" href="../multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a><em> | </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>)</p></li>
-<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>multi_index</strong> (<a class="reference internal" href="../multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a><em> | </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>)</p></li>
+<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>grid</strong> (<a class="reference internal" href="../grid.html#minterpy.core.grid.Grid" title="minterpy.core.grid.Grid"><em>Grid</em></a><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
@@ -881,7 +881,7 @@ the public method <code class="docutils literal notranslate"><span class="pre">p
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>poly</strong> (<a class="reference internal" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC" title="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC"><em>MultivariatePolynomialABC</em></a>) – The instance of polynomial to differentiate.</p></li>
-<li><p><strong>order</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – A one-dimensional integer array specifying the orders of derivative
+<li><p><strong>order</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – A one-dimensional integer array specifying the orders of derivative
 along each dimension. The length of the array must be <code class="docutils literal notranslate"><span class="pre">m</span></code> where
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -935,7 +935,7 @@ If only one polynomial is available, the return value is of
 a <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>]</p>
+<dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>]</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -958,10 +958,10 @@ the public method <code class="docutils literal notranslate"><span class="pre">i
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>multi_index</strong> (<a class="reference internal" href="../multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a><em> | </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a>)</p></li>
-<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
-<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>multi_index</strong> (<a class="reference internal" href="../multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a><em> | </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a>)</p></li>
+<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
+<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>)</p></li>
 <li><p><strong>grid</strong> (<a class="reference internal" href="../grid.html#minterpy.core.grid.Grid" title="minterpy.core.grid.Grid"><em>Grid</em></a><em> | </em><em>None</em>)</p></li>
 </ul>
 </dd>
@@ -995,7 +995,7 @@ the public method <code class="docutils literal notranslate"><span class="pre">i
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>polynomial</strong> (<a class="reference internal" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialSingleABC" title="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialSingleABC"><em>MultivariatePolynomialSingleABC</em></a>) – input polynomial instance defining the properties to be reused</p></li>
-<li><p><strong>new_coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><em>ndarray</em></a><em> | </em><em>None</em>) – the coefficients the new polynomials should have. using <em class="xref py py-obj">polynomial.coeffs</em> if <em class="xref py py-obj">None</em></p></li>
+<li><p><strong>new_coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><em>ndarray</em></a><em> | </em><em>None</em>) – the coefficients the new polynomials should have. using <em class="xref py py-obj">polynomial.coeffs</em> if <em class="xref py py-obj">None</em></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1017,14 +1017,14 @@ the public method <code class="docutils literal notranslate"><span class="pre">i
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid</strong> (<a class="reference internal" href="../grid.html#minterpy.core.grid.Grid" title="minterpy.core.grid.Grid"><em>Grid</em></a>) – The grid on which the polynomial is defined.</p></li>
-<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The coefficients of the polynomial(s); a one-dimensional array
+<li><p><strong>coeffs</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The coefficients of the polynomial(s); a one-dimensional array
 with the same length as the length of the multi-index set or
 a two-dimensional array with each column corresponds to the
 coefficients of a single polynomial on the same grid.
 This parameter is optional, if not specified the polynomial
 is considered “uninitialized”.</p></li>
-<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The internal domain of the polynomial(s).</p></li>
-<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The user domain of the polynomial(s).</p></li>
+<li><p><strong>internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The internal domain of the polynomial(s).</p></li>
+<li><p><strong>user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The user domain of the polynomial(s).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1038,7 +1038,7 @@ is considered “uninitialized”.</p></li>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialSingleABC.coeffs">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coeffs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialSingleABC.coeffs" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coeffs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialSingleABC.coeffs" title="Link to this definition">#</a></dt>
 <dd><p>The coefficients of the polynomial(s).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1049,7 +1049,7 @@ where <code class="docutils literal notranslate"><span class="pre">N</span></cod
 of polynomials.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the coefficients of an uninitialized polynomial are accessed.</p>
@@ -1570,11 +1570,11 @@ the current dimension of the polynomial. Alternatively, another
 instance of polynomial that has a higher dimension, a consistent
 underlying <code class="xref py py-obj docutils literal notranslate"><span class="pre">Grid</span></code> instance is consistent, and a matching domain
 can also be specified as a target dimension.</p></li>
-<li><p><strong>extra_internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The additional internal domains for the expanded polynomial.
+<li><p><strong>extra_internal_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The additional internal domains for the expanded polynomial.
 This parameter is optional; if not specified, the values are either
 taken from the domain of the higher-dimensional polynomial or
 from the domain of the other dimensions.</p></li>
-<li><p><strong>extra_user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The additional user domains for the expanded polynomial.
+<li><p><strong>extra_user_domain</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The additional user domains for the expanded polynomial.
 This parameter is optional; if not specified, the values are either
 taken from the domain of the higher-dimensional polynomial or
 from the domain of the other dimensions.</p></li>
@@ -1645,7 +1645,7 @@ method <code class="docutils literal notranslate"><span class="pre">_partial_dif
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>order</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – A one-dimensional integer array specifying the orders of derivative
+<li><p><strong>order</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – A one-dimensional integer array specifying the orders of derivative
 along each dimension. The length of the array must be <code class="docutils literal notranslate"><span class="pre">m</span></code> where
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -1699,7 +1699,7 @@ If only one polynomial is available, the return value is of
 a <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a> type.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>]</p>
+<dd class="field-odd"><p>Union[<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>]</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the bounds either of inconsistent shape or not in
@@ -1821,7 +1821,7 @@ and each row is of length <span class="math notranslate nohighlight">\(m\)</span
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
 of shape <code class="docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">m)</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the number of query points and
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -1842,7 +1842,7 @@ coefficient sets.</p></li>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -1879,7 +1879,7 @@ coefficient sets.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>poly</strong> (<a class="reference internal" href="#minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC" title="minterpy.core.ABC.multivariate_polynomial_abstract.MultivariatePolynomialABC"><em>MultivariatePolynomialABC</em></a>) – A concrete instance of a polynomial class that can be evaluated
 on a set of query points.</p></li>
-<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
+<li><p><strong>xx</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The set of query points to evaluate as a two-dimensional array
 of shape <code class="docutils literal notranslate"><span class="pre">(k,</span> <span class="pre">m)</span></code> where <code class="docutils literal notranslate"><span class="pre">k</span></code> is the number of query points and
 <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension of the polynomial.</p></li>
 <li><p><strong>**kwargs</strong> – Additional keyword-only arguments that change the behavior of
@@ -1900,7 +1900,7 @@ coefficient sets.</p></li>
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>

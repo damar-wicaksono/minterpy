@@ -59,7 +59,7 @@
     <link rel="prev" title="multi_index" href="multi_index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.dev1+g774cba0" />
+  <meta name="docsearch:version" content="0.1.dev1+gd3735ca" />
   </head>
   
   
@@ -564,7 +564,7 @@ a string as a key to a dictionary.
 This parameter is optional; if neither this parameter nor
 <code class="docutils literal notranslate"><span class="pre">generating_points</span></code> is specified, the default generating function
 based on the Leja-ordered Chebyshev-Lobatto nodes is selected.</p></li>
-<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The generating points of the interpolation grid, a two-dimensional
+<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The generating points of the interpolation grid, a two-dimensional
 array of floats whose columns are the generating points
 per spatial dimension. The shape of the array is <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">m)</span></code>
 where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the maximum degree of all one-dimensional polynomials
@@ -693,7 +693,7 @@ a string key.
 This parameter is optional; if neither this parameter nor
 <code class="docutils literal notranslate"><span class="pre">generating_points</span></code> is specified, the default generating function
 based on the Leja-ordered Chebyshev-Lobatto nodes is selected.</p></li>
-<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The generating points of the interpolation grid, a two-dimensional
+<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, optional) – The generating points of the interpolation grid, a two-dimensional
 array of floats whose columns are the generating points
 per spatial dimension. The shape of the array is <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">m)</span></code>
 where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the maximum degree of all one-dimensional
@@ -753,7 +753,7 @@ generating function.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>multi_index</strong> (<a class="reference internal" href="multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a>) – The multi-index set of exponents of multi-dimensional polynomials
 that the Grid should support.</p></li>
-<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The generating points of the interpolation grid, a two-dimensional
+<li><p><strong>generating_points</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The generating points of the interpolation grid, a two-dimensional
 array of floats whose columns are the generating points
 per spatial dimension. The shape of the array is <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">m)</span></code>
 where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the maximum polynomial degree in all dimensions
@@ -781,7 +781,7 @@ with the given multi-index set and generating points.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>multi_index</strong> (<a class="reference internal" href="multi_index.html#minterpy.core.multi_index.MultiIndexSet" title="minterpy.core.multi_index.MultiIndexSet"><em>MultiIndexSet</em></a>) – The multi-index set of polynomial exponents that defines the Grid.
 The set, in turn, defines the polynomials the Grid can support.</p></li>
-<li><p><strong>generating_values</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The one-dimensional generating points of the interpolation grid,
+<li><p><strong>generating_values</strong> (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) – The one-dimensional generating points of the interpolation grid,
 a one-dimensional array of floats of length <code class="docutils literal notranslate"><span class="pre">(n</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">)</span></code>
 where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the maximum exponent of the multi-index set.
 The values in the array must be unique.</p></li>
@@ -820,7 +820,7 @@ polynomial the Grid can support.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minterpy.core.grid.Grid.generating_function">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generating_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><span class="pre">ndarray</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.generating_function" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generating_function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.generating_function" title="Link to this definition">#</a></dt>
 <dd><p>The generating function of the interpolation Grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -840,7 +840,7 @@ manipulated that results in a grid of a higher degree or dimension.</p></li>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minterpy.core.grid.Grid.generating_points">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generating_points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.generating_points" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generating_points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.generating_points" title="Link to this definition">#</a></dt>
 <dd><p>The generating points of the interpolation Grid.</p>
 <p>The generating points of the interpolation grid are one two main
 ingredients of constructing unisolvent nodes (the other being the
@@ -853,7 +853,7 @@ is <code class="docutils literal notranslate"><span class="pre">(n</span> <span 
 multi-index set of exponents and <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -875,7 +875,7 @@ degree of any one-dimensional polynomials the grid can support.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="minterpy.core.grid.Grid.unisolvent_nodes">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unisolvent_nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.unisolvent_nodes" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unisolvent_nodes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><span class="pre">ndarray</span></a></em><a class="headerlink" href="#minterpy.core.grid.Grid.unisolvent_nodes" title="Link to this definition">#</a></dt>
 <dd><p>The array of unisolvent nodes.</p>
 <p>For a definition of unisolvent nodes, see
 <a class="reference internal" href="../../fundamentals/unisolvence.html"><span class="doc">The Notion of Unisolvence</span></a>
@@ -887,7 +887,7 @@ The shape of the array is <code class="docutils literal notranslate"><span class
 elements in the multi-index set and <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1173,7 +1173,7 @@ an array of the same length as the input array.</p></li>
 (i.e., the coefficients of the polynomial in the Lagrange basis).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1252,7 +1252,7 @@ where <code class="docutils literal notranslate"><span class="pre">n</span></cod
 exponents and <code class="docutils literal notranslate"><span class="pre">m</span></code> is the spatial dimension.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.1)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
