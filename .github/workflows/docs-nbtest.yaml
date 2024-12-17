@@ -1,45 +1,36 @@
-name: Test Notebook-based Documentation
+# This workflow automates the execution of notebooks-based documentation
+# for testing purposes. To allow for parallel processing,
+# different locations of notebooks are executed separately.
+name: nbmake
 
 on: 
   push:
 
 jobs:
-  getting_started:
+  getting-started:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-      - name: Run shared steps
+      - name: Execute Getting Started notebooks
         uses: ./.github/actions/nbmake
         with:
           dir: ./docs/getting-started
-  how_to_grid:
+  how-to-grid:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-      - name: Run shared steps
-        uses: ./.github/actions/shared-steps
-      - name: Execute the notebooks
-        run: |
-          pytest --junitxml=report-notebooks-how-to-grid.xml -vvv --nbmake "./docs/how-to/grid"
-      - name: Upload the report
-        uses: actions/upload-artifact@v4
+      - name: Execute How-To (grid) notebooks
+        uses: ./.github/actions/nbmake
         with:
-          name: report-notebooks-how-to-grid.xml
-          path: ./report-notebooks-how-to-grid.xml
-  how_to_multi_index:
+          dir: ./docs/how-to/grid
+  how-to-multi-index-set:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-      - name: Run shared steps
-        uses: ./.github/actions/shared-steps
-      - name: Execute the notebooks
-        run: |
-          pytest --junitxml=report-notebooks-how-to-multi-index-set.xml -vvv --nbmake "./docs/how-to/multi-index-set"
-      - name: Upload the report
-        uses: actions/upload-artifact@v4
+      - name: Execute How-To (multi-index-set) notebooks
+        uses: ./.github/actions/nbmake
         with:
-          name: report-notebooks-how-to-multi-index-set.xml
-          path: ./report-notebooks-how-to-multi-index-set.xml
+          dir: ./docs/how-to/multi-index-set

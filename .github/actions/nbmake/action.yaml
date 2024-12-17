@@ -1,5 +1,5 @@
 name: nbmake
-description: Test the execution of notebook-based documentation
+description: Test the execution of notebook-based documentation located in a given directory.
 inputs:
   dir:
     required: true
@@ -18,8 +18,8 @@ runs:
         string="${{ inputs.dir }}"
         result=$(echo "$string" | sed 's|./docs/||; s|/|-|g')
         pytest --junitxml=report-notebooks-$result.xml -vvv --nbmake "${{ inputs.dir }}"
-        echo $result >> $GITHUB_OUTPUT
+        echo "outfile=$result" >> $GITHUB_OUTPUT
     - name: Upload the report
       uses: actions/upload-artifact@v4
       with:
-        path: ./report-notebooks-${{ steps.execute.outputs.result }}.xml
+        path: ./report-notebooks-${{ steps.execute.outputs.outfile }}.xml
