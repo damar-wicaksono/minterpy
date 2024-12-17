@@ -16,9 +16,6 @@ jobs:
         uses: ./.github/actions/shared-steps
         with:
           message: 'Executing Getting Started'
-      - name: Install Pandoc
-        run: |
-          sudo apt-get install -y pandoc
       - name: Build the docs
         run: |
           sphinx-build docs _build
