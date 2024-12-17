@@ -13,6 +13,7 @@ runs:
       uses: ./.github/actions/shared-steps
     - name: Execute the notebooks
       id: execute
+      shell: bash
       run: |
         string="${{ inputs.dir }}"
         result=$(echo "$string" | sed 's|./docs/||; s|/|-|g')
