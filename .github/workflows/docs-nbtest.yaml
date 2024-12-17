@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/shared-steps
       - name: Execute the notebooks
         run: |
-          pytest --junitxml=report-notebooks-how-to.xml -vvv --nbmake "./docs/how-to/grid"
+          pytest --junitxml=report-notebooks-how-to-grid.xml -vvv --nbmake "./docs/how-to/grid"
       - name: Upload the report
         uses: actions/upload-artifact@v4
         with:
@@ -43,7 +43,7 @@ jobs:
         uses: ./.github/actions/shared-steps
       - name: Execute the notebooks
         run: |
-          pytest --junitxml=report-notebooks-how-to.xml -vvv --nbmake "./docs/how-to/multi-index"
+          pytest --junitxml=report-notebooks-how-to-multi-index.xml -vvv --nbmake "./docs/how-to/multi-index"
       - name: Upload the report
         uses: actions/upload-artifact@v4
         with:
