@@ -1,0 +1,24 @@
+name: nbmake
+description: Test the execution of notebook-based documentation
+inputs:
+  dir:
+    required: true
+    description: 'Directory of the notebooks (relative to project root directory)'
+runs:
+  using: "composite"
+  steps:
+    - name: Check out the repo
+      uses: actions/checkout@v4
+    - name: Call the shared steps of documentation
+      uses: ./.github/actions/shared-steps
+    - name: Execute the notebooks
+      id: execute
+      run: |
+        string="${{ inputs.dir }}"
+        result=$(echo "$string" | sed 's|./docs/||; s|/|-|g')
+        pytest --junitxml=report-notebooks-$result.xml -vvv --nbmake "${{ inputs.dir }}"
+        echo $result >> $GITHUB_OUTPUT
+    - name: Upload the report
+      uses: actions/upload-artifact@v4
+      with:
+        path: ./report-notebooks-${{ steps.execute.outputs.result }}.xml

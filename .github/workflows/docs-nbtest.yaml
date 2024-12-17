@@ -10,15 +10,9 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
       - name: Run shared steps
-        uses: ./.github/actions/shared-steps
-      - name: Execute the notebooks
-        run: |
-          pytest --junitxml=report-notebooks-getting-started.xml -vvv --nbmake "./docs/getting-started"
-      - name: Upload the report
-        uses: actions/upload-artifact@v4
+        uses: ./.github/actions/nbmake
         with:
-          name: report-notebooks-getting-started.xml
-          path: ./report-notebooks-getting-started.xml
+          dir: ./docs/getting-started
   how_to_grid:
     runs-on: ubuntu-latest
     steps:
