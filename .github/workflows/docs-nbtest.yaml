@@ -43,9 +43,9 @@ jobs:
         uses: ./.github/actions/shared-steps
       - name: Execute the notebooks
         run: |
-          pytest --junitxml=report-notebooks-how-to-multi-index.xml -vvv --nbmake "./docs/how-to/multi-index"
+          pytest --junitxml=report-notebooks-how-to-multi-index-set.xml -vvv --nbmake "./docs/how-to/multi-index-set"
       - name: Upload the report
         uses: actions/upload-artifact@v4
         with:
-          name: report-notebooks-how-to-multi-index.xml
-          path: ./report-notebooks-how-to-multi-index.xml
+          name: report-notebooks-how-to-multi-index-set.xml
+          path: ./report-notebooks-how-to-multi-index-set.xml
